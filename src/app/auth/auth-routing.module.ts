@@ -1,11 +1,16 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { RegisterComponent } from './register/register.component';
+import { InstructionComponent } from './instruction/instruction.component';
 
 export const routes: Routes = [
   {
-    path: '',
+    path: 'register',
     component: RegisterComponent
+  },
+  {
+    path:'instruction',
+    component:InstructionComponent
   }
 
 ];
@@ -16,3 +21,4 @@ export const routes: Routes = [
 })
 export class AuthRoutingModule {
 }
+

@@ -10,7 +10,7 @@ const appRoutes: Routes = [
     canActivate: [BootstrapGuard]
   },
   {
-    path: 'register',
+    path: '',
     loadChildren: '../auth/auth.module#AuthModule'
   }
 ];

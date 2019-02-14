@@ -3,6 +3,7 @@ import { CoreRoutingModule } from './core-routing.module';
 import { SharedModule } from '../shared/shared.module';
 import { HttpClientModule } from '@angular/common/http';
 import { BootstrapComponent } from '../bootstrap/bootstrap.component';
+import { Error } from 'tslint/lib/error';
 
 @NgModule({
   declarations: [BootstrapComponent],
