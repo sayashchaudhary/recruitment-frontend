@@ -7,6 +7,8 @@ import { CoreModule } from './core/core.module';
 import { RouterModule } from '@angular/router';
 import { SharedModule } from './shared/shared.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { StoreModule } from '@ngrx/store';
+import { rootReducer } from './root-reducer';
 
 @NgModule({
   declarations: [
@@ -18,7 +20,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     RouterModule,
     CoreModule,
     SharedModule,
-    HttpClientModule
+    HttpClientModule,
+    StoreModule.forRoot(rootReducer),
   ],
   providers: [],
   bootstrap: [AppComponent]
