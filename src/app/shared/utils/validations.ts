@@ -10,11 +10,13 @@ export class ValidationUtils {
       return null;
     }
   }
-  public static validateFieldNo(control: AbstractControl): { [key: string]: boolean } | null {
-      const fieldNo = control.value;
-      if (!fieldNo || fieldNo.toString().length !== 10) {
-        return { fieldNumber: true };
-      } else {
-        return null;
-      }
-  }}
+
+  public static validateField(control: AbstractControl): { [key: string]: boolean } | null {
+    const fieldValue = control.value;
+    if (!fieldValue || fieldValue.toString().length !== 10) {
+      return { fieldNumber: true };
+    } else {
+      return null;
+    }
+  }
+}

@@ -10,30 +10,31 @@ import { ValidationUtils } from '../../shared/utils/validations';
   templateUrl: './register.component.html',
   styleUrls: ['./register.component.css']
 })
-export class RegisterComponent implements OnInit{
+export class RegisterComponent implements OnInit {
 
   form: FormGroup;
   branches = ['CSE', 'IT'];
   address = ['Hostler', 'Day Scholar'];
 
-  constructor(private http: HttpClient,private router:Router) {
+  constructor(private http: HttpClient, private router: Router) {
     this.form = new FormGroup({
       name: new FormControl(null, [Validators.required]),
       email: new FormControl(null, [Validators.required, Validators.email]),
       studentNumber: new FormControl(null, [Validators.required, ValidationUtils.validateStudentNo.bind(this)]),
-      rollNumber: new FormControl(null, [Validators.required, ValidationUtils.validateFieldNo.bind(this)]),
-      mobileNumber: new FormControl(null, [Validators.required, ValidationUtils.validateFieldNo.bind(this)]),
+      rollNumber: new FormControl(null, [Validators.required, ValidationUtils.validateField.bind(this)]),
+      mobileNumber: new FormControl(null, [Validators.required, ValidationUtils.validateField.bind(this)]),
       hostler: new FormControl(null, [Validators.required]),
       branch: new FormControl(null, [Validators.required]),
     });
   }
 
-  ngOnInit(){
-     let obs = this.http.post('https://skeptics-backend.herokuapp.com/Register',{name: 'sdhfdsjf',
-       email: 'dksnfl@gmail.com',
-       Mob: '9090909090',
-       password: '12345678'});
-     obs.subscribe((res) => console.log('got the response',res));
+  ngOnInit() {
+    // this.http.post('https://skeptics-backend.herokuapp.com/Register', {
+    //   name: 'sdhfdsjf',
+    //   email: 'dksnfl@gmail.com',
+    //   Mob: '9090909090',
+    //   password: '12345678'
+    // }).subscribe((res) => console.log('got the response', res));
   }
 
   submit() {
