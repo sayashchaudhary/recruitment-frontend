@@ -2,6 +2,8 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ReactiveFormsModule } from '@angular/forms';
 import { MatButtonModule, MatFormFieldModule, MatInputModule, MatSelectModule } from '@angular/material';
+import { StoreModule } from '@ngrx/store';
+import { appRootReducer } from '../central/reducers';
 
 @NgModule({
   declarations: [],
@@ -11,7 +13,8 @@ import { MatButtonModule, MatFormFieldModule, MatInputModule, MatSelectModule } 
     MatFormFieldModule,
     MatInputModule,
     MatSelectModule,
-    MatButtonModule
+    MatButtonModule,
+    StoreModule.forFeature('app', appRootReducer)
   ],
   exports: [
     CommonModule,
