@@ -9,6 +9,8 @@ import { SharedModule } from './shared/shared.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { StoreModule } from '@ngrx/store';
 import { rootReducer } from './root-reducer';
+import { StoreDevtoolsModule } from '@ngrx/store-devtools';
+import { environment } from '../environments/environment';
 
 @NgModule({
   declarations: [
@@ -22,6 +24,7 @@ import { rootReducer } from './root-reducer';
     SharedModule,
     HttpClientModule,
     StoreModule.forRoot(rootReducer),
+    !environment.production ? StoreDevtoolsModule.instrument({maxAge: 50}) : [],
   ],
   providers: [],
   bootstrap: [AppComponent]
