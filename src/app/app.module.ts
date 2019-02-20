@@ -23,11 +23,24 @@ import { environment } from '../environments/environment';
     CoreModule,
     SharedModule,
     HttpClientModule,
-    StoreModule.forRoot(rootReducer),
-    !environment.production ? StoreDevtoolsModule.instrument({maxAge: 50}) : [],
+    StoreModule.forRoot(rootReducer, { metaReducers: [reset] }),
+    !environment.production ? StoreDevtoolsModule.instrument({ maxAge: 50 }) : [],
   ],
   providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule {
+}
+
+export function reset(reducer) {
+  return function (state, action) {
+
+    if (action.type === AppActionTypes.LOGOUT) {
+      state = undefined;
+
+
+    }
+
+    return reducer(state, action);
+  };
 }
