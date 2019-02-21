@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, NgForm, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
-import { HttpClient } from '@angular/common/http';
-import { ValidationUtils } from '../../shared/utils/validations';
+import { ValidationUtils } from '../../utils/validations';
+import { AppMiddleware } from '../../middlewares/app';
 
 
 @Component({
@@ -16,7 +16,7 @@ export class RegisterComponent implements OnInit {
   branches = ['CSE', 'IT'];
   address = ['Hostler', 'Day Scholar'];
 
-  constructor(private http: HttpClient, private router: Router) {
+  constructor(private router: Router, private appMiddleware: AppMiddleware) {
     this.form = new FormGroup({
       name: new FormControl(null, [Validators.required]),
       email: new FormControl(null, [Validators.required, Validators.email]),
@@ -38,7 +38,8 @@ export class RegisterComponent implements OnInit {
   }
 
   submit() {
-    this.router.navigate(['/instruction']);
+    // this.router.navigate(['/instruction']);
+    this.appMiddleware.register(this.form.value);
   }
 
 }

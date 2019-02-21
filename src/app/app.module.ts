@@ -3,22 +3,58 @@ import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
 
 import { AppComponent } from './app.component';
-import { CoreModule } from './core/core.module';
-import { RouterModule } from '@angular/router';
-import { SharedModule } from './shared/shared.module';
+import { RouterModule, Routes } from '@angular/router';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { StoreModule } from '@ngrx/store';
+import { StoreDevtoolsModule } from '@ngrx/store-devtools';
+import { environment } from '../environments/environment';
+import { CommonModule } from '@angular/common';
+import { ReactiveFormsModule } from '@angular/forms';
+import { MatButtonModule, MatFormFieldModule, MatInputModule, MatSelectModule } from '@angular/material';
+import { appRootReducer } from './reducers';
+import { RegisterComponent } from './components/register/register.component';
+import { InstructionComponent } from './components/instruction/instruction.component';
+import { BootstrapComponent } from './components/bootstrap/bootstrap.component';
+import { BootstrapGuard } from './guards/bootstrap.guard';
+
+export const routes: Routes = [
+  {
+    path: '',
+    component:BootstrapComponent,
+    canActivate:[BootstrapGuard]
+  },
+  {
+    path: 'register',
+    component: RegisterComponent
+  },
+  {
+    path:'instruction',
+    component:InstructionComponent
+  }
+
+];
 
 @NgModule({
   declarations: [
     AppComponent,
+    BootstrapComponent,
+    RegisterComponent,
+    InstructionComponent
   ],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
     RouterModule,
-    CoreModule,
-    SharedModule,
-    HttpClientModule
+    HttpClientModule,
+    CommonModule,
+    RouterModule.forRoot(routes),
+    ReactiveFormsModule,
+    MatFormFieldModule,
+    MatInputModule,
+    MatSelectModule,
+    MatButtonModule,
+    StoreModule.forRoot(appRootReducer),
+    !environment.production ? StoreDevtoolsModule.instrument({ maxAge: 50 }) : [],
   ],
   providers: [],
   bootstrap: [AppComponent]
