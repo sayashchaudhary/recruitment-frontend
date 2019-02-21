@@ -1,5 +1,5 @@
-import { User } from '../../shared/models/user';
-import { Action } from '../actions';
+import { User } from '../models/user';
+import { Action } from '../actions/index';
 import { AppActions } from '../actions/app';
 
 export interface AppState {

@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, NgForm, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
-import { ValidationUtils } from '../../shared/utils/validations';
-import { AppMiddleware } from '../../core/middlewares/app';
+import { ValidationUtils } from '../../utils/validations';
+import { AppMiddleware } from '../../middlewares/app';
 
 
 @Component({

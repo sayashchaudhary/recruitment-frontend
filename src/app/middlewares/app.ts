@@ -1,7 +1,7 @@
 import { Store } from '@ngrx/store';
-import { getIsLoading, getIsLoggedIn, State } from '../../central/reducers';
+import { getIsLoading, getIsLoggedIn, RootState } from '../reducers';
 import { combineLatest, Observable } from 'rxjs';
-import { User } from '../../shared/models/user';
+import { User } from '../models/user';
 import { filter, map, take } from 'rxjs/operators';
 import { Injectable } from '@angular/core';
 
@@ -9,7 +9,7 @@ import { Injectable } from '@angular/core';
   providedIn: 'root'
 })
 export class AppMiddleware {
-  constructor(private store: Store<State>) {
+  constructor(private store: Store<RootState>) {
   }
 
   register(user: User) {

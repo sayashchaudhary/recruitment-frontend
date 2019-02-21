@@ -1,5 +1,5 @@
 import { Action } from './index';
-import { User } from '../../shared/models/user';
+import { User } from '../models/user';
 
 export enum AppActions {
   REGISTER_SENT = '[App] register sent',
