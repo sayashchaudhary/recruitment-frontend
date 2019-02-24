@@ -3,7 +3,7 @@ import { FormControl, FormGroup, NgForm, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { ValidationUtils } from '../../utils/validations';
 import { AppMiddleware } from '../../middlewares/app';
-
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-register',
@@ -16,7 +16,7 @@ export class RegisterComponent implements OnInit {
   branches = ['CSE', 'IT'];
   address = ['Hostler', 'Day Scholar'];
 
-  constructor(private router: Router, private appMiddleware: AppMiddleware) {
+  constructor(private router: Router, private appMiddleware: AppMiddleware, private http: HttpClient) {
     this.form = new FormGroup({
       name: new FormControl(null, [Validators.required]),
       email: new FormControl(null, [Validators.required, Validators.email]),
@@ -29,16 +29,17 @@ export class RegisterComponent implements OnInit {
   }
 
   ngOnInit() {
-    // this.http.post('https://skeptics-backend.herokuapp.com/Register', {
-    //   name: 'sdhfdsjf',
-    //   email: 'dksnfl@gmail.com',
-    //   Mob: '9090909090',
-    //   password: '12345678'
-    // }).subscribe((res) => console.log('got the response', res));
+   //  this.http.post('https://skeptics-backend.herokuapp.com/Register', {
+  // name: 'sdhfdsjf',
+  //  email: 'dksnfl@gmail.com',
+  //  Mob: '9090909090',
+  // password: '12345678'
+  //   }).subscribe((res) => console.log('got the response', res));
   }
 
   submit() {
-    // this.router.navigate(['/instruction']);
+    console.log("clicked");
+    this.router.navigate(['/instruction']);
     this.appMiddleware.register(this.form.value);
   }
 

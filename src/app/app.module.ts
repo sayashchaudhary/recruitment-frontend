@@ -16,6 +16,10 @@ import { RegisterComponent } from './components/register/register.component';
 import { InstructionComponent } from './components/instruction/instruction.component';
 import { BootstrapComponent } from './components/bootstrap/bootstrap.component';
 import { BootstrapGuard } from './guards/bootstrap.guard';
+import { DashboardComponent } from './dashboard/dashboard.component';
+
+import { NavComponent } from './dashboard/nav/nav.component';
+import { PannelComponent } from './dashboard/pannel/pannel.component';
 
 export const routes: Routes = [
   {
@@ -30,8 +34,16 @@ export const routes: Routes = [
   {
     path:'instruction',
     component:InstructionComponent
-  }
+  },
+  {
+    path:'nav',
+    component: NavComponent
+  },
+  {
+    path:'panel',
+    component: PannelComponent
 
+  }
 ];
 
 @NgModule({
@@ -39,7 +51,12 @@ export const routes: Routes = [
     AppComponent,
     BootstrapComponent,
     RegisterComponent,
-    InstructionComponent
+    InstructionComponent,
+    DashboardComponent,
+    
+    NavComponent,
+    
+    PannelComponent
   ],
   imports: [
     BrowserModule,
