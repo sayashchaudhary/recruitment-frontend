@@ -20,7 +20,7 @@ export class AppMiddleware {
       map(([loading, loggedIn]) => loading || loggedIn,),
       filter(status => !status));
     status$.subscribe(status => {
-      // TODO: Api call to register the user on backend!!
+      // TODO: Api call to register the user on backend!!!
     });
   }
 
