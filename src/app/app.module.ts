@@ -10,26 +10,29 @@ import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { environment } from '../environments/environment';
 import { CommonModule } from '@angular/common';
 import { ReactiveFormsModule } from '@angular/forms';
-import { MatButtonModule, MatFormFieldModule, MatInputModule, MatSelectModule } from '@angular/material';
+import { MatButtonModule, MatFormFieldModule, MatInputModule, MatSelectModule, MatSnackBarModule } from '@angular/material';
 import { appRootReducer } from './reducers';
 import { RegisterComponent } from './components/register/register.component';
 import { InstructionComponent } from './components/instruction/instruction.component';
 import { BootstrapComponent } from './components/bootstrap/bootstrap.component';
 import { BootstrapGuard } from './guards/bootstrap.guard';
+import { NgxLoadingModule } from 'ngx-loading';
+import { AnonymousAuthGuard } from './guards/anonymous-auth.guard';
 
 export const routes: Routes = [
   {
     path: '',
-    component:BootstrapComponent,
-    canActivate:[BootstrapGuard]
+    component: BootstrapComponent,
+    canActivate: [BootstrapGuard]
   },
   {
     path: 'register',
-    component: RegisterComponent
+    component: RegisterComponent,
+    canActivate: [AnonymousAuthGuard]
   },
   {
-    path:'instruction',
-    component:InstructionComponent
+    path: 'instruction',
+    component: InstructionComponent
   }
 
 ];
@@ -53,8 +56,10 @@ export const routes: Routes = [
     MatInputModule,
     MatSelectModule,
     MatButtonModule,
+    MatSnackBarModule,
     StoreModule.forRoot(appRootReducer),
     !environment.production ? StoreDevtoolsModule.instrument({ maxAge: 50 }) : [],
+    NgxLoadingModule.forRoot({})
   ],
   providers: [],
   bootstrap: [AppComponent]

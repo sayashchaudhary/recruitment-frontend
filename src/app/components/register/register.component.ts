@@ -15,6 +15,7 @@ export class RegisterComponent implements OnInit {
   form: FormGroup;
   branches = ['CSE', 'IT'];
   address = ['Hostler', 'Day Scholar'];
+  loading = false;
 
   constructor(private router: Router, private appMiddleware: AppMiddleware) {
     this.form = new FormGroup({
@@ -29,12 +30,7 @@ export class RegisterComponent implements OnInit {
   }
 
   ngOnInit() {
-    // this.http.post('https://skeptics-backend.herokuapp.com/Register', {
-    //   name: 'sdhfdsjf',
-    //   email: 'dksnfl@gmail.com',
-    //   Mob: '9090909090',
-    //   password: '12345678'
-    // }).subscribe((res) => console.log('got the response', res));
+    this.appMiddleware.getIsLoading().subscribe(loading => this.loading = loading);
   }
 
   submit() {
