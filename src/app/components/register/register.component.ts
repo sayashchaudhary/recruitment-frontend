@@ -23,7 +23,7 @@ export class RegisterComponent implements OnInit {
       studentNumber: new FormControl(null, [Validators.required, ValidationUtils.validateStudentNo.bind(this)]),
       rollNumber: new FormControl(null, [Validators.required, ValidationUtils.validateField.bind(this)]),
       mobileNumber: new FormControl(null, [Validators.required, ValidationUtils.validateField.bind(this)]),
-      hostler: new FormControl(null, [Validators.required]),
+      residence: new FormControl(null, [Validators.required]),
       branch: new FormControl(null, [Validators.required]),
     });
   }
@@ -38,7 +38,6 @@ export class RegisterComponent implements OnInit {
   }
 
   submit() {
-    // this.router.navigate(['/instruction']);
     this.appMiddleware.register(this.form.value);
   }
 

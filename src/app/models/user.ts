@@ -1,11 +1,11 @@
 export interface User {
   name: string;
   email: string;
-  studentNo: string;
-  rollNo: string;
-  mobileNo: string;
+  studentNo: number;
+  rollNo: number;
+  mobileNo: number;
   branch: Branch;
-  hostlerDayscholar: HostlerDayScholar;
+  residence: HostlerDayScholar;
 }
 
 export enum Branch {
