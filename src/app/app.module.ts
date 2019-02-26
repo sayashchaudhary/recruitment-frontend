@@ -18,6 +18,8 @@ import { BootstrapComponent } from './components/bootstrap/bootstrap.component';
 import { BootstrapGuard } from './guards/bootstrap.guard';
 import { NgxLoadingModule } from 'ngx-loading';
 import { AnonymousAuthGuard } from './guards/anonymous-auth.guard';
+import { DashboardComponent } from './components/dashboard/dashboard.component';
+import { NavComponent } from './components/dashboard/nav/nav.component';
 
 export const routes: Routes = [
   {
@@ -33,16 +35,22 @@ export const routes: Routes = [
   {
     path: 'instruction',
     component: InstructionComponent
+  },
+  {
+    path: 'nav',
+    component: NavComponent
   }
-
 ];
+
 
 @NgModule({
   declarations: [
     AppComponent,
     BootstrapComponent,
     RegisterComponent,
-    InstructionComponent
+    InstructionComponent,
+    DashboardComponent,
+    NavComponent,
   ],
   imports: [
     BrowserModule,
