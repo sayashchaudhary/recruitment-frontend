@@ -17,9 +17,8 @@ import { InstructionComponent } from './components/instruction/instruction.compo
 import { BootstrapComponent } from './components/bootstrap/bootstrap.component';
 import { BootstrapGuard } from './guards/bootstrap.guard';
 import { DashboardComponent } from './dashboard/dashboard.component';
-
 import { NavComponent } from './dashboard/nav/nav.component';
-import { PannelComponent } from './dashboard/pannel/pannel.component';
+
 
 export const routes: Routes = [
   {
@@ -38,13 +37,9 @@ export const routes: Routes = [
   {
     path:'nav',
     component: NavComponent
-  },
-  {
-    path:'panel',
-    component: PannelComponent
-
   }
-];
+]
+
 
 @NgModule({
   declarations: [
@@ -53,10 +48,7 @@ export const routes: Routes = [
     RegisterComponent,
     InstructionComponent,
     DashboardComponent,
-    
     NavComponent,
-    
-    PannelComponent
   ],
   imports: [
     BrowserModule,

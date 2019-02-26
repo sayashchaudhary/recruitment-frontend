@@ -29,18 +29,11 @@ export class RegisterComponent implements OnInit {
   }
 
   ngOnInit() {
-   //  this.http.post('https://skeptics-backend.herokuapp.com/Register', {
-  // name: 'sdhfdsjf',
-  //  email: 'dksnfl@gmail.com',
-  //  Mob: '9090909090',
-  // password: '12345678'
-  //   }).subscribe((res) => console.log('got the response', res));
+
   }
 
   submit() {
-    console.log("clicked");
-    this.router.navigate(['/instruction']);
-    this.appMiddleware.register(this.form.value);
+
   }
 
 }
