@@ -1,4 +1,4 @@
 export interface IBroadcaster {
   key: string;
-  payload: string;
+  payload: any;
 }
