@@ -30,7 +30,7 @@ export class AppMiddleware {
     const isLoading$ = this.store.select(getIsLoading);
     const status$ = combineLatest(isLoading$, isLoggedIn$).pipe(
       take(1),
-      map(([loading, loggedIn]) => loading || loggedIn,),
+      map(([loading, loggedIn]) => loading || loggedIn),
       filter(status => !status));
     status$.subscribe(status => {
       this.store.dispatch(new RegisterSent());

@@ -12,7 +12,7 @@ export class BootstrapGuard implements CanActivate {
     next: ActivatedRouteSnapshot,
     state: RouterStateSnapshot): Observable<boolean> | Promise<boolean> | boolean {
     if (!localStorage.getItem('token')) {
-      this.router.navigate(['/nav']);
+      this.router.navigate(['/dashboard']);
       return false;
     }
     return true;

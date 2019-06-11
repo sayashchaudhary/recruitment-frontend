@@ -20,6 +20,7 @@ import { NgxLoadingModule } from 'ngx-loading';
 import { AnonymousAuthGuard } from './guards/anonymous-auth.guard';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { NavComponent } from './components/dashboard/nav/nav.component';
+import { PanelComponent } from './components/dashboard/panel/panel.component';
 
 export const routes: Routes = [
   {
@@ -37,6 +38,10 @@ export const routes: Routes = [
     component: InstructionComponent
   },
   {
+    path: 'dashboard',
+    component: DashboardComponent
+  },
+  {
     path: 'nav',
     component: NavComponent
   }
@@ -51,6 +56,7 @@ export const routes: Routes = [
     InstructionComponent,
     DashboardComponent,
     NavComponent,
+    PanelComponent,
   ],
   imports: [
     BrowserModule,
