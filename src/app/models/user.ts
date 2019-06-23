@@ -2,19 +2,14 @@ export interface User {
   _id?: string;
   name: string;
   email: string;
-  studentNo: number;
-  rollNo: number;
-  mobileNo: number;
+  student_no: number;
+  roll_no: number;
+  phone: number;
   branch: Branch;
-  residence: HostlerDayScholar;
 }
 
 export enum Branch {
-  CSE = 'cse',
-  IT = 'it'
+  CSE = 'CSE',
+  IT = 'IT'
 }
 
-export enum HostlerDayScholar {
-  HOSTLER = 'hostler',
-  DAYSCHOLAR = 'day scholar'
-}
