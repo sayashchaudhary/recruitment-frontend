@@ -1,8 +1,8 @@
 import { Store } from '@ngrx/store';
 import { getIsLoading, getIsLoggedIn, RootState } from '../reducers';
-import { combineLatest, Observable } from 'rxjs';
+import { combineLatest, Observable, throwError } from 'rxjs';
 import { User } from '../models/user';
-import { filter, map, take } from 'rxjs/operators';
+import { catchError, filter, map, switchMap, take } from 'rxjs/operators';
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { RegisterFailed, RegisterSent, RegisterSuccess } from '../actions/app';
@@ -10,6 +10,7 @@ import { Router } from '@angular/router';
 import { MatSnackBar } from '@angular/material';
 import { environment } from '../../environments/environment';
 import { Constants } from '../utils/constants';
+import { HttpService } from '../services/http.service';
 
 @Injectable({
   providedIn: 'root'
@@ -17,10 +18,9 @@ import { Constants } from '../utils/constants';
 export class AppMiddleware {
 
   private errorMessage = 'Something went wrong. Please try again.';
-  private alreadyRegisteredMessage = 'You are already rgistered with same roll number or email id!';
 
   constructor(private store: Store<RootState>,
-              private http: HttpClient,
+              private httpService: HttpService,
               private router: Router,
               private snackbar: MatSnackBar) {
   }
@@ -30,29 +30,26 @@ export class AppMiddleware {
     const isLoading$ = this.store.select(getIsLoading);
     const status$ = combineLatest(isLoading$, isLoggedIn$).pipe(
       take(1),
-      map(([loading, loggedIn]) => loading || loggedIn,),
-      filter(status => !status));
-    status$.subscribe(status => {
-      this.store.dispatch(new RegisterSent());
-      this.http.post(`${environment.baseUrl}/register`, user).subscribe
-      ((res: any) => {
-        if (res._id) {
-          this.store.dispatch(new RegisterSuccess(res));
-          localStorage.setItem(Constants.USER_ID, res._id);
-          this.router.navigate(['/instruction']);
-        } else {
-          this.store.dispatch(new RegisterFailed());
-          if (res.errors) {
-            if (res.errors.email || res.errors.rollNo) {
-              this.snackbar.open(this.alreadyRegisteredMessage);
-              return;
-            }
-          }
-          else {
-            this.snackbar.open(this.errorMessage);
-          }
-        }
-      });
+      map(([loading, loggedIn]) => loading || loggedIn),
+      filter(status => !status),
+      switchMap(() => {
+        this.store.dispatch(new RegisterSent());
+        return this.httpService.post(`/users`, user);
+      }),
+      catchError(err => throwError(err)));
+    status$.subscribe((res: { user: User, token: string }) => {
+      if (res.user) {
+        this.store.dispatch(new RegisterSuccess(res.user));
+        localStorage.setItem(Constants.AUTH_TOKEN, res.token);
+        this.router.navigate(['/instruction']);
+      } else {
+        this.store.dispatch(new RegisterFailed());
+        this.snackbar.open(this.errorMessage);
+      }
+    }, (e) => {
+      console.log(e);
+      this.store.dispatch(new RegisterFailed());
+      this.snackbar.open(this.errorMessage);
     });
   }
 

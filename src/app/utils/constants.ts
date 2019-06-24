@@ -1,5 +1,6 @@
 export enum Constants {
-  USER_ID = 'user-id'
+  USER_ID = 'user-id',
+  AUTH_TOKEN = 'auth-token'
 }
 
 export enum Broadcaster {

@@ -1,4 +1,7 @@
 <ngx-loading [show]="loading" [config]="{ backdropBorderRadius: '3px' }"></ngx-loading>
+<mat-toolbar>
+  Conatus Recruitment Portal
+</mat-toolbar>
 <div class="container">
   <form [formGroup]="form" (ngSubmit)="form.valid && submit()">
     <div class="form-container">
@@ -17,23 +20,19 @@
           </mat-select>
         </mat-form-field>
         <mat-form-field>
-          <input type="number" matInput placeholder="Student Number" formControlName="studentNumber">
+          <input type="number" matInput placeholder="Student Number" formControlName="student_number">
         </mat-form-field>
         <mat-form-field>
-          <input type="number" matInput placeholder="Roll Number" formControlName="rollNumber">
+          <input type="number" matInput placeholder="Roll Number" formControlName="roll_number">
         </mat-form-field>
         <mat-form-field>
-          <input type="number" matInput placeholder="Mobile Number" formControlName="mobileNumber">
+          <input type="number" matInput placeholder="Mobile Number" formControlName="phone">
         </mat-form-field>
         <mat-form-field>
           <input type="text" matInput placeholder="Email" formControlName="email">
         </mat-form-field>
         <mat-form-field>
-          <mat-select placeholder="Hostler/DayScholar" formControlName="residence">
-            <mat-option *ngFor="let status of address" [value]="status">
-              {{status}}
-            </mat-option>
-          </mat-select>
+          <input type="password" matInput placeholder="Password" formControlName="password">
         </mat-form-field>
       </div>
       <div class="submit-button">
@@ -41,4 +40,7 @@
       </div>
     </div>
   </form>
+</div>
+<div class="footer">
+  <p>Powered by Team Conatus</p>
 </div>

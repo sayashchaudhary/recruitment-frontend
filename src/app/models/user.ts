@@ -2,8 +2,8 @@ export interface User {
   _id?: string;
   name: string;
   email: string;
-  student_no: number;
-  roll_no: number;
+  student_number: number;
+  roll_number: number;
   phone: number;
   branch: Branch;
 }

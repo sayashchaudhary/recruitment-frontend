@@ -10,7 +10,14 @@ import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { environment } from '../environments/environment';
 import { CommonModule } from '@angular/common';
 import { ReactiveFormsModule } from '@angular/forms';
-import { MatButtonModule, MatFormFieldModule, MatInputModule, MatSelectModule, MatSnackBarModule } from '@angular/material';
+import {
+  MatButtonModule,
+  MatFormFieldModule,
+  MatInputModule,
+  MatSelectModule,
+  MatSnackBarModule,
+  MatToolbarModule
+} from '@angular/material';
 import { appRootReducer } from './reducers';
 import { RegisterComponent } from './components/register/register.component';
 import { InstructionComponent } from './components/instruction/instruction.component';
@@ -65,6 +72,7 @@ export const routes: Routes = [
     MatSelectModule,
     MatButtonModule,
     MatSnackBarModule,
+    MatToolbarModule,
     StoreModule.forRoot(appRootReducer),
     !environment.production ? StoreDevtoolsModule.instrument({ maxAge: 50 }) : [],
     NgxLoadingModule.forRoot({})

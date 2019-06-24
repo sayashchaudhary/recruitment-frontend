@@ -14,17 +14,16 @@ export class RegisterComponent implements OnInit {
 
   form: FormGroup;
   branches = ['CSE', 'IT'];
-  address = ['Hostler', 'Day Scholar'];
   loading = false;
 
   constructor(private router: Router, private appMiddleware: AppMiddleware, private http: HttpClient) {
     this.form = new FormGroup({
       name: new FormControl(null, [Validators.required]),
       email: new FormControl(null, [Validators.required, Validators.email]),
-      studentNumber: new FormControl(null, [Validators.required, ValidationUtils.validateStudentNo.bind(this)]),
-      rollNumber: new FormControl(null, [Validators.required, ValidationUtils.validateField.bind(this)]),
-      mobileNumber: new FormControl(null, [Validators.required, ValidationUtils.validateField.bind(this)]),
-      residence: new FormControl(null, [Validators.required]),
+      student_number: new FormControl(null, [Validators.required, ValidationUtils.validateStudentNo.bind(this)]),
+      roll_number: new FormControl(null, [Validators.required, ValidationUtils.validateField.bind(this)]),
+      phone: new FormControl(null, [Validators.required, ValidationUtils.validateField.bind(this)]),
+      password: new FormControl(null, [Validators.required]),
       branch: new FormControl(null, [Validators.required]),
     });
   }
