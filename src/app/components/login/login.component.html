@@ -1,5 +1,6 @@
+<ngx-loading [show]="loading" [config]="{ backdropBorderRadius: '3px' }"></ngx-loading>
 <mat-toolbar>
-  Conatus Recruitment Portal
+Conatus Recruitment Portal
 </mat-toolbar>
 <div class="container">
   <form [formGroup]="form" (ngSubmit)="form.valid && submit()">

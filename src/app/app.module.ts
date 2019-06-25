@@ -28,6 +28,9 @@ import { AnonymousAuthGuard } from './guards/anonymous-auth.guard';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { NavComponent } from './components/dashboard/nav/nav.component';
 import { LoginComponent } from './components/login/login.component';
+import { HomepageComponent } from './components/homepage/homepage.component';
+
+
 
 export const routes: Routes = [
   {
@@ -42,7 +45,8 @@ export const routes: Routes = [
   },
   {
     path: 'login',
-    component: LoginComponent
+    component: LoginComponent,
+    canActivate: [AnonymousAuthGuard]
   },
   {
     path: 'instruction',
@@ -51,7 +55,11 @@ export const routes: Routes = [
   {
     path: 'nav',
     component: NavComponent
-  }
+  },
+  {
+    path: 'homepage',
+    component: HomepageComponent,
+  },
 ];
 
 
@@ -64,6 +72,9 @@ export const routes: Routes = [
     DashboardComponent,
     NavComponent,
     LoginComponent,
+    HomepageComponent,
+
+
   ],
   imports: [
     BrowserModule,
