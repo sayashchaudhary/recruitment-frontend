@@ -1,25 +1,22 @@
-.form-container {
+.form-container{
   width: 60%;
-  margin: auto;
+  margin-top: 25vh;
+  margin-left: 25vh;
 }
 mat-toolbar {
   background: #4682b4;
   color: white;
 }
-
-.register-heading {
+.login-heading{
   text-align: center;
 }
-
-.submit-button {
+.login-button{
   text-align: center;
 }
-
 .mat-raised-button {
   width: 200px;
   background: #4682b4;
 }
-
 .footer {
   position: fixed;
   display: flex;
