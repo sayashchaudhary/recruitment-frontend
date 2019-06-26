@@ -13,3 +13,7 @@ export enum Branch {
   IT = 'IT'
 }
 
+export interface Member {
+  email: string;
+  password: string;
+}

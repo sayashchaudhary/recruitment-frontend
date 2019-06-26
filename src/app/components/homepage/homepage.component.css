@@ -2,9 +2,6 @@ mat-toolbar {
   background: #4682b4;
   color: white;
 }
-.login-heading{
-  text-align: center;
-}
 .login-button{
   text-align: center;
   padding-top: 220px;

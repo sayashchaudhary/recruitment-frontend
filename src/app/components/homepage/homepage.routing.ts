@@ -1,7 +1,5 @@
 import {Router, RouterModule, Routes} from '@angular/router';
-// @ts-ignore
 import { LoginComponent} from './components/login/login.component';
-// @ts-ignore
 import { RegisterComponent } from './components/register/register.component';
 
 const routes: Routes = [

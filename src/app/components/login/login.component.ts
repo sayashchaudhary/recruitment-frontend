@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
-import { ValidationUtils } from '../../utils/validations';
 import { AppMiddleware } from '../../middlewares/app';
 import { HttpClient } from '@angular/common/http';
 
@@ -28,6 +27,6 @@ export class LoginComponent implements OnInit {
   }
 
   submit() {
-    this.appMiddleware.register(this.form.value);
+    this.appMiddleware.login(this.form.value);
   }
 }
