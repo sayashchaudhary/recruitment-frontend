@@ -29,8 +29,7 @@ import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { NavComponent } from './components/dashboard/nav/nav.component';
 import { LoginComponent } from './components/login/login.component';
 import { HomepageComponent } from './components/homepage/homepage.component';
-
-
+import { PanelComponent } from './components/dashboard/panel/panel.component';
 
 export const routes: Routes = [
   {
@@ -53,6 +52,10 @@ export const routes: Routes = [
     component: InstructionComponent
   },
   {
+    path: 'dashboard',
+    component: DashboardComponent
+  },
+  {
     path: 'nav',
     component: NavComponent
   },
@@ -73,8 +76,7 @@ export const routes: Routes = [
     NavComponent,
     LoginComponent,
     HomepageComponent,
-
-
+    PanelComponent,
   ],
   imports: [
     BrowserModule,
