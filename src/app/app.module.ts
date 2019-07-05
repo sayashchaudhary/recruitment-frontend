@@ -31,6 +31,8 @@ import { LoginComponent } from './components/login/login.component';
 import { HomepageComponent } from './components/homepage/homepage.component';
 import { PanelComponent } from './components/dashboard/panel/panel.component';
 
+
+
 export const routes: Routes = [
   {
     path: '',
@@ -63,7 +65,20 @@ export const routes: Routes = [
     path: 'homepage',
     component: HomepageComponent,
   },
+  {
+    path: '',
+    redirectTo: '/login', pathMatch: 'full'
+  },
+  {
+    path: 'Login',
+    component: LoginComponent
+  },
+  {
+    path: 'Register',
+    component: RegisterComponent
+  }
 ];
+
 
 
 @NgModule({
@@ -101,3 +116,4 @@ export const routes: Routes = [
 })
 export class AppModule {
 }
+export const routermodule = RouterModule.forRoot(routes);
