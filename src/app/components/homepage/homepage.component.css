@@ -1,6 +1,4 @@
-body{
-  background-image: url("image/conatus.png");
-}
+
 mat-toolbar {
   background: #4682b4;
   color: white;
@@ -10,18 +8,19 @@ mat-toolbar {
   position: absolute;
   text-align: center;
   top: 40%;
-  padding-left: 320px;
+  padding-left: 25%;
 
 }
 .register-button{
   position: absolute;
   text-align: center;
   top: 40%;
-  padding-left: 580px;
+  padding-left: 43%;
 
 }
 .mat-raised-button {
-  width: 220px;
+  width: 250px;
+  height: 40px;
   background: #4682b4;
 }
 .footer {
