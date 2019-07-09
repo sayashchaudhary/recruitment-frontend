@@ -66,10 +66,6 @@ export const routes: Routes = [
     component: HomepageComponent,
   },
   {
-    path: '',
-    redirectTo: '/login', pathMatch: 'full'
-  },
-  {
     path: 'Login',
     component: LoginComponent
   },

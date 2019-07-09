@@ -1,20 +1,30 @@
 
+<body>
 
 <mat-toolbar>
   Conatus Recruitment Portal
 </mat-toolbar>
-<img src="/assets/img/conatus.png" width="82%">
+
 <div class="container">
-  <div class="buttons"></div>
+
+    <div class="box">
+
+      <img src="assets/img/conatus.png" width="650px" height="250px" text-center >
+
+
        <div class="login-button">
-         <button mat-raised-button color="primary" type="submit" [routerLink]="['/login']">Log In</button>
+         <button mat-raised-button type="submit" [routerLink]="['/login']">LOG IN</button>
        </div>
          <div class="register-button">
-            <button mat-raised-button color="primary" type="submit" [routerLink]="['/register']">Register</button>
+            <button  mat-raised-button type="submit" [routerLink]="['/register']">REGISTER</button>
          </div>
        </div>
+
+</div>
+
 <div class="footer">
   <p>
     Powered by Team Conatus
   </p>
 </div>
+</body>
