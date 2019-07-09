@@ -17,31 +17,24 @@ mat-toolbar {
   text-align: center;
   border-radius: 20px;
 }
-
-
- .login-button button[type = "submit"] {
+.login-button button[type = "submit"] {
    position: absolute;
    text-align: center;
    top: 65%;
    width: 250px;
    height: 50px;
-
    left: 14%;
    color: white;
    font-size: 20px;
    background: rgba(5,0,14,0.9);
-
    border: 3px solid #3498db;
    outline: none;
    border-radius: 20px;
-   transition: 0.25s;
-
-
 }
  .register-button button[type = "submit"]{
-  position: absolute;
-  text-align: center;
-  top: 65%;
+   position: absolute;
+   text-align: center;
+   top: 65%;
    width: 250px;
    height: 50px;
    left: 52%;
@@ -51,9 +44,7 @@ mat-toolbar {
    border: 4px solid #3498db;
    outline: none;
    border-radius: 20px;
-   transition: 0.25s;
  }
-
 .footer {
   position: fixed;
   display: flex;
