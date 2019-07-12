@@ -40,6 +40,11 @@ export const routes: Routes = [
     canActivate: [BootstrapGuard]
   },
   {
+    path: 'home',
+    component: HomepageComponent,
+    canActivate: [AnonymousAuthGuard]
+  },
+  {
     path: 'register',
     component: RegisterComponent,
     canActivate: [AnonymousAuthGuard]
@@ -60,18 +65,6 @@ export const routes: Routes = [
   {
     path: 'nav',
     component: NavComponent
-  },
-  {
-    path: 'homepage',
-    component: HomepageComponent,
-  },
-  {
-    path: 'Login',
-    component: LoginComponent
-  },
-  {
-    path: 'Register',
-    component: RegisterComponent
   }
 ];
 
@@ -112,4 +105,3 @@ export const routes: Routes = [
 })
 export class AppModule {
 }
-export const routermodule = RouterModule.forRoot(routes);
