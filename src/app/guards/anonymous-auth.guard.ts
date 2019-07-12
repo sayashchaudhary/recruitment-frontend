@@ -15,7 +15,7 @@ export class AnonymousAuthGuard implements CanActivate {
     next: ActivatedRouteSnapshot,
     state: RouterStateSnapshot): Observable<boolean> | Promise<boolean> | boolean {
     if (localStorage.getItem(Constants.AUTH_TOKEN)) {
-      this.router.navigate(['/instructions']);
+      this.router.navigate(['/instruction']);
       return false;
     }
     return true;
