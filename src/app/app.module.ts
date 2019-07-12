@@ -56,16 +56,14 @@ export const routes: Routes = [
   },
   {
     path: 'instructions',
-    component: InstructionComponent
+    component: InstructionComponent,
+    canActivate: [BootstrapGuard]
   },
   {
     path: 'dashboard',
-    component: DashboardComponent
+    component: DashboardComponent,
+    canActivate: [BootstrapGuard]
   },
-  {
-    path: 'nav',
-    component: NavComponent
-  }
 ];
 
 
