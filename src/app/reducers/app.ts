@@ -1,19 +1,17 @@
 import { Member, User } from '../models/user';
-import { Action } from '../actions/index';
+import { Action } from '../actions';
 import { AppActions } from '../actions/app';
 
 export interface AppState {
   loggedInUser: User;
   isLoggedIn: boolean;
   loading: boolean;
-  loggedInMember: Member;
 }
 
 export const initialState: AppState = {
   loggedInUser: null,
   isLoggedIn: false,
   loading: false,
-  loggedInMember: null,
 };
 
 export function appReducer(state: AppState = initialState, action: Action) {
@@ -53,8 +51,8 @@ export function appReducer(state: AppState = initialState, action: Action) {
         ...state,
         loading: false,
         isLoggedIn: true,
-        loggedInMember: action.payload
-      }
+        loggedInUser: action.payload
+      };
     default: {
       return state;
     }
@@ -65,4 +63,3 @@ export const _getLoggedInUser = (state: AppState) => state.loggedInUser;
 export const _getIsLoading = (state: AppState) => state.loading;
 export const _getIsLoggedIn = (state: AppState) => state.isLoggedIn;
 
-export const getLoggedInMember = (state: AppState) => state.loggedInMember;

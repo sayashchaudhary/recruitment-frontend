@@ -1,4 +1,4 @@
-import  { Action } from './index';
+import { Action } from './index';
 import { User } from '../models/user';
 import { Member } from '../models/user';
 
@@ -26,18 +26,18 @@ export class RegisterSuccess implements Action {
   }
 }
 
-export class LogInSent implements Action{
+export class LogInSent implements Action {
   readonly type = AppActions.LOGIN_SENT;
 }
 
-export class LogInFailed implements Action{
+export class LogInFailed implements Action {
   readonly type = AppActions.LOGIN_FAILED;
 }
 
 export class LogInSuccess implements Action {
   readonly type = AppActions.LOGIN_SUCCESS;
 
-  constructor(public payload: Member) {
+  constructor(public payload: User) {
   }
 }
 

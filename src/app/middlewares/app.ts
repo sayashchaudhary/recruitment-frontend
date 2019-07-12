@@ -65,9 +65,9 @@ export class AppMiddleware {
         return this.httpService.post(`/users/login`, member);
       }),
       catchError(err => throwError(err)));
-    status$.subscribe((res: { member: Member, token: string }) => {
-      if (res.member) {
-        this.store.dispatch(new LogInSuccess(res.member));
+    status$.subscribe((res: { user: User, token: string }) => {
+      if (res.user) {
+        this.store.dispatch(new LogInSuccess(res.user));
         localStorage.setItem(Constants.AUTH_TOKEN, res.token);
         this.router.navigate(['/instruction']);
       } else {

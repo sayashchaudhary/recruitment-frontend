@@ -55,7 +55,7 @@ export const routes: Routes = [
     canActivate: [AnonymousAuthGuard]
   },
   {
-    path: 'instruction',
+    path: 'instructions',
     component: InstructionComponent
   },
   {
