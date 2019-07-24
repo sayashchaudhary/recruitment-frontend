@@ -17,3 +17,9 @@ export interface Member {
   email: string;
   password: string;
 }
+export interface Question {
+  question_id: number;
+  solution: string;
+  category: string;
+  question: string;
+}
