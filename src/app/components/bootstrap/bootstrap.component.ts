@@ -14,5 +14,4 @@ export class BootstrapComponent implements OnInit {
   ngOnInit() {
     this.router.navigate(['home']);
   }
-
 }

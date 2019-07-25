@@ -1,24 +1,41 @@
-import { Question } from '../models/user';
 import { Action } from '../actions';
-import { AppActions } from '../actions/app';
+import { Question } from '../models/question';
+import { QuestionActions } from '../actions/questions';
 
-export interface AppState {
-  _getQuestions: Question[];
+export interface QuestionState {
+  questions: Question[];
+  isQuestionsLoading: boolean;
+  isQuestionsLoaded: boolean;
 }
 
-export const initialState: AppState = {
-  _getQuestions : null,
+export const initialState: QuestionState = {
+  questions: null,
+  isQuestionsLoaded: false,
+  isQuestionsLoading: false
 };
 
-export function appReducer(state: AppState = initialState, action: Action) {
+export function questionsReducer(state: QuestionState = initialState, action: Action) {
 
   switch (action.type) {
-    case AppActions._getQUESTIONS:
+    case QuestionActions.FETCH_QUESTIONS:
       return {
         ...state,
-        _getQuestions: action.payload,
-        isLoading: false
+        isQuestionsLoading: true
+      };
+    case QuestionActions.FETCH_QUESTIONS_SUCCESS:
+      return {
+        ...state,
+        isQuestionsLoaded: true,
+        isQuestionsLoading: false
+      };
+    case QuestionActions.FETCH_QUESTIONS_FAILED:
+      return {
+        ...state,
+        isQuestionsLoading: false
       };
   }
 }
-export const _getQuestions = (state: AppState) => state._getQuestions;
+
+export const _getQuestions = (state: QuestionState) => state.questions;
+export const _getQuestionsLoading = (state: QuestionState) => state.isQuestionsLoading;
+export const _getQuestionsLoaded = (state: QuestionState) => state.isQuestionsLoaded;
