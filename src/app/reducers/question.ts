@@ -37,5 +37,5 @@ export function questionsReducer(state: QuestionState = initialState, action: Ac
 }
 
 export const _getQuestions = (state: QuestionState) => state.questions;
-export const _getQuestionsLoading = (state: QuestionState) => state.isQuestionsLoading;
-export const _getQuestionsLoaded = (state: QuestionState) => state.isQuestionsLoaded;
+export const _getIsQuestionsLoading = (state: QuestionState) => state.isQuestionsLoading;
+export const _getIsQuestionsLoaded = (state: QuestionState) => state.isQuestionsLoaded;

@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { QuestionsMiddleware } from '../../middlewares/questions';
 
 @Component({
   selector: 'app-bootstrap',
@@ -7,11 +7,14 @@ import { Router } from '@angular/router';
   styleUrls: ['./bootstrap.component.css']
 })
 export class BootstrapComponent implements OnInit {
+  isLoading: boolean;
 
-  constructor(private router: Router) {
+  constructor(private questionsMiddleware: QuestionsMiddleware) {
+    this.questionsMiddleware.getIsQuestionsLoading().subscribe(loading => this.isLoading = loading);
+    this.questionsMiddleware.fetchQuestions();
   }
 
-  ngOnInit() {
-    this.router.navigate(['home']);
+  ngOnInit(): void {
   }
+
 }

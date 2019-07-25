@@ -1,6 +1,6 @@
 import { _getIsLoading, _getIsLoggedIn, _getLoggedInUser, appReducer, AppState } from './app';
 import { ActionReducerMap, createSelector } from '@ngrx/store';
-import { _getQuestions, _getQuestionsLoaded, _getQuestionsLoading, questionsReducer, QuestionState } from './question';
+import { _getQuestions, _getIsQuestionsLoaded, _getIsQuestionsLoading, questionsReducer, QuestionState } from './question';
 
 export interface RootState {
   app: AppState;
@@ -36,12 +36,12 @@ export const getQuestions = createSelector(
   _getQuestions
 );
 
-export const getQuestionsLoaded = createSelector(
+export const getIsQuestionsLoaded = createSelector(
   getQuestionState,
-  _getQuestionsLoaded
+  _getIsQuestionsLoaded
 );
 
-export const getQuestionsLoading = createSelector(
+export const getIsQuestionsLoading = createSelector(
   getQuestionState,
-  _getQuestionsLoading
+  _getIsQuestionsLoading
 );

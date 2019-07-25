@@ -41,7 +41,7 @@ export class AppMiddleware {
       if (res.user) {
         this.store.dispatch(new RegisterSuccess(res.user));
         localStorage.setItem(Constants.AUTH_TOKEN, res.token);
-        this.router.navigate(['/instruction']);
+        this.router.navigate(['']);
       } else {
         this.store.dispatch(new RegisterFailed());
         this.snackbar.open(this.errorMessage);
