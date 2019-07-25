@@ -5,7 +5,7 @@ import { combineLatest, throwError } from 'rxjs';
 import { catchError, filter, map, switchMap, take } from 'rxjs/operators';
 import { HttpService } from '../services/http.service';
 import { Question } from '../models/question';
-import { FetchQuestionsFailed, FetchQuestionsSuccess } from '../actions/questions';
+import { FetchQuestions, FetchQuestionsFailed, FetchQuestionsSuccess } from '../actions/questions';
 import { Router } from '@angular/router';
 
 @Injectable({
@@ -25,7 +25,10 @@ export class QuestionsMiddleware {
       take(1),
       map(([isLoaded, isLoading]) => isLoaded || isLoading),
       filter(res => !res),
-      switchMap(() => this.httpService.get('/questions')),
+      switchMap(() => {
+        this.store.dispatch(new FetchQuestions());
+        return this.httpService.get('/questions');
+      }),
       catchError(err => throwError(err))
     ).subscribe((res: Question[]) => {
       if (res && res.length > 0) {
