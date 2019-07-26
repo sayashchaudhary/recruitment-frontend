@@ -1,5 +1,26 @@
-<app-nav></app-nav>
-<app-panel></app-panel>
-<div class="container">
-  <app-questions></app-questions>
+<!--NAVBAR-->
+
+<nav class="navbar navbar-light blue lighten-4">
+  <span class="navbar-brand" style="color: white">CONATUS</span>
+  <header class="test_started">
+    <div class="global-nav_fixed style">
+      <div class="test-test__details">
+        <div class="test-timer__time ng-scope" ng-if="vm.timeLeft" style="color: white">
+          <span class="test_timer_default ng-binding" style="margin-right: 5px;">Time Left</span>
+          <span class="test_timer_default"> :  </span>
+          <span class="test_timer_time ng-binding">00:47:33</span>
+        </div>
+      </div>
+    </div>
+  </header>
+</nav>
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-3">
+      <app-panel></app-panel>
+    </div>
+    <div class="col-9">
+      <app-questions></app-questions>
+    </div>
+  </div>
 </div>
