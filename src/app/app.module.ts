@@ -26,7 +26,6 @@ import { BootstrapGuard } from './guards/bootstrap.guard';
 import { NgxLoadingModule } from 'ngx-loading';
 import { AnonymousAuthGuard } from './guards/anonymous-auth.guard';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
-import { NavComponent } from './components/dashboard/nav/nav.component';
 import { LoginComponent } from './components/login/login.component';
 import { HomepageComponent } from './components/homepage/homepage.component';
 import { PanelComponent } from './components/dashboard/panel/panel.component';
@@ -75,7 +74,6 @@ export const routes: Routes = [
     RegisterComponent,
     InstructionComponent,
     DashboardComponent,
-    NavComponent,
     LoginComponent,
     HomepageComponent,
     PanelComponent,
