@@ -2,7 +2,7 @@
   position: fixed;
   left: 0px;
   width: 350px;
-  float: left;
+  /*float: left;*/
   height: 100%;
   top: 70px;
   background: #f5f5f5;
@@ -27,4 +27,22 @@ test-grid button {
 .test-grid__nav-btn:hover{
   background-color: #4682b4;
   color: #ffffff;
+}
+.button {
+  background-color: white;
+  border: none;
+  color: black;
+  padding: 5px;
+  text-decoration: none;
+  font-size: 16px;
+  font-weight: 600;
+  margin: 4px 2px;
+  border-radius: 50%;
+  width:35px;
+  height:35px;
+  display: inline;
+}
+
+.question-number{
+  height: 80%;
 }

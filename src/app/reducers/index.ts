@@ -7,7 +7,7 @@ export interface RootState {
   questions: QuestionState;
 }
 
-export const appRootReducer = {
+export const appRootReducer: ActionReducerMap<RootState> = {
   app: appReducer,
   questions: questionsReducer
 };
