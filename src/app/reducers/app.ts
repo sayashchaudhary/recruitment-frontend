@@ -6,12 +6,14 @@ export interface AppState {
   loggedInUser: User;
   isLoggedIn: boolean;
   loading: boolean;
+  isBootstrap: boolean;
 }
 
 export const initialState: AppState = {
   loggedInUser: null,
   isLoggedIn: false,
   loading: false,
+  isBootstrap: null,
 };
 
 export function appReducer(state: AppState = initialState, action: Action) {
@@ -53,6 +55,11 @@ export function appReducer(state: AppState = initialState, action: Action) {
         isLoggedIn: true,
         loggedInUser: action.payload
       };
+    case AppActions.BOOTSTRAP:
+      return {
+        ...state,
+        isBootstrap: true,
+      }
     default: {
       return state;
     }
@@ -62,4 +69,5 @@ export function appReducer(state: AppState = initialState, action: Action) {
 export const _getLoggedInUser = (state: AppState) => state.loggedInUser;
 export const _getIsLoading = (state: AppState) => state.loading;
 export const _getIsLoggedIn = (state: AppState) => state.isLoggedIn;
+export const _getIsBootstrap = (state: AppState) => state.isBootstrap;
 

@@ -30,6 +30,7 @@ import { LoginComponent } from './components/login/login.component';
 import { HomepageComponent } from './components/homepage/homepage.component';
 import { PanelComponent } from './components/dashboard/panel/panel.component';
 import { QuestionsComponent } from './components/dashboard/questions/questions.component';
+import { BootstrapAuthGuard } from './guards/bootstrap-auth.guard';
 
 
 export const routes: Routes = [
@@ -54,14 +55,14 @@ export const routes: Routes = [
     canActivate: [AnonymousAuthGuard]
   },
   {
-    path: 'instructions',
+    path: 'instruction',
     component: InstructionComponent,
-    canActivate: [BootstrapGuard]
+    canActivate: [BootstrapAuthGuard]
   },
   {
     path: 'dashboard',
     component: DashboardComponent,
-    canActivate: [BootstrapGuard]
+    canActivate: [AnonymousAuthGuard]
   },
 ];
 

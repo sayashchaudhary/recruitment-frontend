@@ -2,7 +2,7 @@ import { Action } from './index';
 import { User } from '../models/user';
 
 export enum AppActions {
-  _getQUESTIONS = '[App] questions',
+  BOOTSTRAP = '[App] bootstrap',
   REGISTER_SENT = '[App] register sent',
   REGISTER_SUCCESS = '[App] register success',
   REGISTER_FAILED = '[App] register failed',
