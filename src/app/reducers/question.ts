@@ -25,6 +25,7 @@ export function questionsReducer(state: QuestionState = initialState, action: Ac
     case QuestionActions.FETCH_QUESTIONS_SUCCESS:
       return {
         ...state,
+        questions: action.payload,
         isQuestionsLoaded: true,
         isQuestionsLoading: false
       };
@@ -33,6 +34,8 @@ export function questionsReducer(state: QuestionState = initialState, action: Ac
         ...state,
         isQuestionsLoading: false
       };
+    default:
+      return state;
   }
 }
 
