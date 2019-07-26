@@ -30,7 +30,7 @@ import { NavComponent } from './components/dashboard/nav/nav.component';
 import { LoginComponent } from './components/login/login.component';
 import { HomepageComponent } from './components/homepage/homepage.component';
 import { PanelComponent } from './components/dashboard/panel/panel.component';
-
+import { QuestionsComponent } from './components/dashboard/questions/questions.component';
 
 
 export const routes: Routes = [
@@ -79,6 +79,7 @@ export const routes: Routes = [
     LoginComponent,
     HomepageComponent,
     PanelComponent,
+    QuestionsComponent
   ],
   imports: [
     BrowserModule,
