@@ -7,6 +7,7 @@ import { HttpService } from '../services/http.service';
 import { Question } from '../models/question';
 import { FetchQuestions, FetchQuestionsFailed, FetchQuestionsSuccess } from '../actions/questions';
 import { Router } from '@angular/router';
+import { AppBootstraped } from '../actions/app';
 
 @Injectable({
   providedIn: 'root'
@@ -33,6 +34,7 @@ export class QuestionsMiddleware {
     ).subscribe((res: Question[]) => {
       if (res && res.length > 0) {
         this.router.navigate(['instructions']);
+        this.store.dispatch(new AppBootstraped());
         this.store.dispatch(new FetchQuestionsSuccess(res));
       } else {
         this.store.dispatch(new FetchQuestionsFailed());

@@ -41,4 +41,8 @@ export class LogInSuccess implements Action {
   }
 }
 
+export class AppBootstraped implements Action {
+  readonly type = AppActions.BOOTSTRAP;
+}
+
 

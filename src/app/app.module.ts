@@ -55,14 +55,14 @@ export const routes: Routes = [
     canActivate: [AnonymousAuthGuard]
   },
   {
-    path: 'instruction',
+    path: 'instructions',
     component: InstructionComponent,
     canActivate: [BootstrapAuthGuard]
   },
   {
     path: 'dashboard',
     component: DashboardComponent,
-    canActivate: [AnonymousAuthGuard]
+    canActivate: [BootstrapAuthGuard]
   },
 ];
 
