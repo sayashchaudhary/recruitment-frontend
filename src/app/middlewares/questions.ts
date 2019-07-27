@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Store } from '@ngrx/store';
-import { getIsQuestionsLoaded, getIsQuestionsLoading, RootState } from '../reducers';
+import { getIsQuestionsLoaded, getIsQuestionsLoading, getQuestions, RootState } from '../reducers';
 import { combineLatest, throwError } from 'rxjs';
 import { catchError, filter, map, switchMap, take } from 'rxjs/operators';
 import { HttpService } from '../services/http.service';
@@ -46,5 +46,9 @@ export class QuestionsMiddleware {
 
   getIsQuestionsLoading() {
     return this.store.select(getIsQuestionsLoading);
+  }
+
+  getQuestions() {
+    return this.store.select(getQuestions);
   }
 }

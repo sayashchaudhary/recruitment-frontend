@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { QuestionsMiddleware } from '../../middlewares/questions';
+import { Question } from '../../models/question';
 
 @Component({
   selector: 'app-dashboard',
@@ -6,10 +8,17 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./dashboard.component.css']
 })
 export class DashboardComponent implements OnInit {
+  questions: Question[];
 
-  constructor() { }
+  constructor(private questionMiddleware: QuestionsMiddleware) {
+    this.questionMiddleware.getQuestions().subscribe((res: Question[]) => {
+      console.log('[Dashboard questions]', res);
+      this.questions = res;
+    });
+  }
 
   ngOnInit() {
+
   }
 
 }
