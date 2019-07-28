@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Answer } from '../../../models/answer';
+import { QuestionsMiddleware } from '../../../middlewares/questions';
 
 @Component({
   selector: 'app-panel',
@@ -7,9 +9,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PanelComponent implements OnInit {
 
-  constructor() { }
+  answers: Answer[];
+
+  constructor(private questionsMiddleware: QuestionsMiddleware) {
+  }
 
   ngOnInit() {
+    this.questionsMiddleware.getAnswers()
+      .subscribe((res: Answer[]) => this.answers = res);
   }
 
 }
