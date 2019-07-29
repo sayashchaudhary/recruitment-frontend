@@ -11,7 +11,7 @@ phases:
     commands:
     - aws s3 cp dist s3://${S3_BUCKET} --recursive
     - aws configure set preview.cloudfront true
-    - aws cloudfront create-invalidation --distribution-id ${CLOUDFRONT_DISTRIBUTION_ID} --paths '/*'
+    - aws cloudfront create-invalidation --distribution-id ${CLOUDFRONT_DISTRIBUTION_ID} --paths /index.html /error.html
 artifacts:
   files:
   - '**/*'
