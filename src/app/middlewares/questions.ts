@@ -92,4 +92,14 @@ export class QuestionsMiddleware {
     }
     this.store.dispatch(new UpdateAnswer(answer));
   }
+
+  submitTest() {
+    this.getAnswers().pipe(
+      take(1),
+      switchMap((res: Answer[]) => {
+        console.log('[Answers]', res);
+        return this.httpService.post('/answersupdate', res);
+      })
+    ).subscribe(res => console.log(res));
+  }
 }

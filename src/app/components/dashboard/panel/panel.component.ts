@@ -19,4 +19,8 @@ export class PanelComponent implements OnInit {
       .subscribe((res: Answer[]) => this.answers = res);
   }
 
+  finish() {
+    this.questionsMiddleware.submitTest();
+  }
+
 }

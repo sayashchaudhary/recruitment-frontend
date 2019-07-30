@@ -8,8 +8,8 @@ import { Broadcaster } from '../utils/constants';
 })
 export class TimerService {
   private seconds = 60;
-  private minutes = 60;
-  private hours = 1;
+  private minutes = 59;
+  private hours = 0;
 
   constructor(private eventBus: EventBusService) {
   }
@@ -18,11 +18,11 @@ export class TimerService {
     timer(0, 1000).subscribe(
       (_) => {
         this.seconds--;
-        if (this.seconds == 0) {
-          this.seconds = 60;
+        if (this.seconds === 0) {
+          this.seconds = 59;
           this.minutes--;
         }
-        if (this.minutes == 0) {
+        if (this.minutes === 0) {
           this.minutes = 60;
           this.hours--;
         }
