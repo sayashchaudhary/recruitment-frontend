@@ -45,7 +45,7 @@ export class AppMiddleware {
         this.router.navigate(['']);
       } else {
         this.store.dispatch(new RegisterFailed());
-        this.snackbar.open(this.errorMessage);
+        this.snackbar.open(this.errorMessage, null, {duration: 5000});
       }
     }, (e) => {
       console.log(e);
@@ -74,7 +74,7 @@ export class AppMiddleware {
         this.router.navigate(['']);
       } else {
         this.store.dispatch(new LogInFailed());
-        this.snackbar.open(this.errorMessage);
+        this.snackbar.open(this.errorMessage, null, {duration: 5000});
       }
     }, (e) => {
       console.log(e);
