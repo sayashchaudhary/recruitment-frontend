@@ -7,7 +7,7 @@ export interface AnswersState extends EntityState<Answer> {
   isInitialized: boolean;
 }
 
-export const answers = (a: Answer) => a.question_id;
+export const answers = (a: Answer) => a.question;
 
 export const answersAdapter = createEntityAdapter({
   selectId: answers,
@@ -29,7 +29,7 @@ export function answersReducer(state: AnswersState = initialState, action: Actio
     case
     AnswersAction.UPDATE_ANSWER:
       return answersAdapter.updateOne({
-        id: action.payload.question_id,
+        id: action.payload.question,
         changes: {
           answer: action.payload.answer
         }

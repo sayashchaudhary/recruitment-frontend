@@ -21,4 +21,11 @@ export class DashboardComponent implements OnInit {
 
   }
 
+  scrollToSection(id: string) {
+    if (!id) {
+      return;
+    }
+    document.getElementById(id).scrollIntoView();
+  }
+
 }

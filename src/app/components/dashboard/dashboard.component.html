@@ -2,9 +2,17 @@
 
 <nav class="navbar navbar-light blue lighten-4">
   <span class="navbar-brand" style="color: white">CONATUS</span>
+  <div class="section" (click)="scrollToSection('c-lang')">C Language</div>
+  <div class="section" (click)="scrollToSection('aptitude')">Aptitude</div>
+  <div class="section" (click)="scrollToSection('html-css')">HTML/CSS</div>
+  <div class="section" (click)="scrollToSection('java')">JAVA</div>
+  <div class="section" (click)="scrollToSection('algorithm')">Algorithm</div>
   <header class="test_started">
     <div class="global-nav_fixed style">
+
       <div class="test-test__details">
+
+
         <div class="test-timer__time ng-scope" ng-if="vm.timeLeft" style="color: white">
           <span class="test_timer_default ng-binding" style="margin-right: 5px;">Time Left</span>
           <span class="test_timer_default"> :  </span>

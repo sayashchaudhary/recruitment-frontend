@@ -9,7 +9,7 @@ export interface Question {
 export enum Category {
   JAVA = 'java',
   C = 'c',
-  CSS = 'css',
-  HTML = 'html',
+  HTML_CSS = 'html/css',
+  APTITUDE = 'aptitude',
   ALGORITHM = 'algorithm'
 }

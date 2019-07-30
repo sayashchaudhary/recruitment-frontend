@@ -1,23 +1,129 @@
 <div class="test-panel">
-  <div class="single-question" *ngFor="let question of questions; let i = index">
-    <pre><span class="q-number">Q. {{i+1}}-</span> {{question.question}}</pre>
-    <div class="radio-container">
-      <input (change)="radioChanged($event)" type="radio" [value]="0" [name]="question.question_id">
-      {{question.options[0]}}
+  <!--C Language-->
+  <div>
+    <h4 id="c-lang">C Language</h4>
+    <div class="single-question" *ngFor="let question of cLanguage; let i = index">
+      <pre><span class="q-number">Q. {{question.question_id}}-</span> {{question.question}}</pre>
+      <div class="radio-container">
+        <input (change)="radioChanged($event)" type="radio" [value]="0" [name]="question._id">
+        {{question.options[0]}}
+      </div>
+      <div class="radio-container">
+        <input (change)="radioChanged($event)" type="radio" [value]="1" [name]="question._id">
+        {{question.options[1]}}
+      </div>
+      <div class="radio-container">
+        <input (change)="radioChanged($event)" type="radio" [value]="2" [name]="question._id">
+        {{question.options[2]}}
+      </div>
+      <div class="radio-container">
+        <input (change)="radioChanged($event)" type="radio" [value]="3" [name]="question._id">
+        {{question.options[3]}}
+      </div>
+      <div class="divider"></div>
     </div>
-    <div class="radio-container">
-      <input (change)="radioChanged($event)" type="radio" [value]="1" [name]="question.question_id">
-      {{question.options[1]}}
+  </div>
+  <!--Aptitude-->
+  <div>
+    <h4 id="aptitude">Aptitude</h4>
+    <div class="single-question" *ngFor="let question of aptitude; let i = index">
+      <pre><span class="q-number">Q. {{question.question_id}}-</span> {{question.question}}</pre>
+      <div class="radio-container">
+        <input (change)="radioChanged($event)" type="radio" [value]="0" [name]="question._id">
+        {{question.options[0]}}
+      </div>
+      <div class="radio-container">
+        <input (change)="radioChanged($event)" type="radio" [value]="1" [name]="question._id">
+        {{question.options[1]}}
+      </div>
+      <div class="radio-container">
+        <input (change)="radioChanged($event)" type="radio" [value]="2" [name]="question._id">
+        {{question.options[2]}}
+      </div>
+      <div class="radio-container">
+        <input (change)="radioChanged($event)" type="radio" [value]="3" [name]="question._id">
+        {{question.options[3]}}
+      </div>
+      <div class="divider"></div>
     </div>
-    <div class="radio-container">
-      <input (change)="radioChanged($event)" type="radio" [value]="2" [name]="question.question_id">
-      {{question.options[2]}}
+  </div>
+
+  <!--Html/css-->
+
+  <div>
+    <h4 id="html-css">HTML/CSS</h4>
+    <div class="single-question" *ngFor="let question of htmlCss; let i = index">
+      <pre><span class="q-number">Q. {{question.question_id}}-</span> {{question.question}}</pre>
+      <div class="radio-container">
+        <input (change)="radioChanged($event)" type="radio" [value]="0" [name]="question._id">
+        {{question.options[0]}}
+      </div>
+      <div class="radio-container">
+        <input (change)="radioChanged($event)" type="radio" [value]="1" [name]="question._id">
+        {{question.options[1]}}
+      </div>
+      <div class="radio-container">
+        <input (change)="radioChanged($event)" type="radio" [value]="2" [name]="question._id">
+        {{question.options[2]}}
+      </div>
+      <div class="radio-container">
+        <input (change)="radioChanged($event)" type="radio" [value]="3" [name]="question._id">
+        {{question.options[3]}}
+      </div>
+      <div class="divider"></div>
     </div>
-    <div class="radio-container">
-      <input (change)="radioChanged($event)" type="radio" [value]="3" [name]="question.question_id">
-      {{question.options[3]}}
+  </div>
+
+  <!--Java-->
+
+  <div>
+    <h4 id="java">Java</h4>
+    <div class="single-question" *ngFor="let question of java; let i = index">
+      <pre><span class="q-number">Q. {{question.question_id}}-</span> {{question.question}}</pre>
+      <div class="radio-container">
+        <input (change)="radioChanged($event)" type="radio" [value]="0" [name]="question._id">
+        {{question.options[0]}}
+      </div>
+      <div class="radio-container">
+        <input (change)="radioChanged($event)" type="radio" [value]="1" [name]="question._id">
+        {{question.options[1]}}
+      </div>
+      <div class="radio-container">
+        <input (change)="radioChanged($event)" type="radio" [value]="2" [name]="question._id">
+        {{question.options[2]}}
+      </div>
+      <div class="radio-container">
+        <input (change)="radioChanged($event)" type="radio" [value]="3" [name]="question._id">
+        {{question.options[3]}}
+      </div>
+      <div class="divider"></div>
     </div>
-    <div class="divider"></div>
+  </div>
+
+  <!--Algorithm-->
+
+  <div>
+    <h4 id="algorithm">Algorithm</h4>
+    <div class="single-question" *ngFor="let question of algorithm; let i = index">
+      <pre><span class="q-number">Q. {{question.question_id}}-</span> {{question.question}}</pre>
+      <div class="radio-container">
+        <input (change)="radioChanged($event)" type="radio" [value]="0" [name]="question._id">
+        {{question.options[0]}}
+      </div>
+      <div class="radio-container">
+        <input (change)="radioChanged($event)" type="radio" [value]="1" [name]="question._id">
+        {{question.options[1]}}
+      </div>
+      <div class="radio-container">
+        <input (change)="radioChanged($event)" type="radio" [value]="2" [name]="question._id">
+        {{question.options[2]}}
+      </div>
+      <div class="radio-container">
+        <input (change)="radioChanged($event)" type="radio" [value]="3" [name]="question._id">
+        {{question.options[3]}}
+      </div>
+      <div class="divider"></div>
+    </div>
   </div>
 </div>
 

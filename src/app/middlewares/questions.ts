@@ -19,6 +19,7 @@ import { AppBootstraped } from '../actions/app';
 import { Answer } from '../models/answer';
 import { User } from '../models/user';
 import { InitializeAnswers, UpdateAnswer } from '../actions/answers';
+import { Constants } from '../utils/constants';
 
 @Injectable({
   providedIn: 'root'
@@ -70,15 +71,14 @@ export class QuestionsMiddleware {
 
   initializeAnswers(questions: Question[]) {
     const answers: Answer[] = [];
-    let userId: string;
-    this.store.select(getLoggedInUser).subscribe((res: User) => userId = res._id);
+    const userId = localStorage.getItem(Constants.USER_ID);
     this.store.select(getIsAnswersInitialized).subscribe(res => {
       if (!res) {
         questions.forEach(q => {
           answers.push({
-            question_id: q.question_id,
+            question: q._id,
             answer: null,
-            userId
+            user: userId
           });
         });
         this.store.dispatch(new InitializeAnswers(answers));
@@ -87,7 +87,7 @@ export class QuestionsMiddleware {
   }
 
   updateAnswer(answer: Answer) {
-    if (!answer.question_id) {
+    if (!answer.question) {
       return;
     }
     this.store.dispatch(new UpdateAnswer(answer));
