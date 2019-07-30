@@ -31,6 +31,7 @@ import { HomepageComponent } from './components/homepage/homepage.component';
 import { PanelComponent } from './components/dashboard/panel/panel.component';
 import { QuestionsComponent } from './components/dashboard/questions/questions.component';
 import { BootstrapAuthGuard } from './guards/bootstrap-auth.guard';
+import { ThankyouComponent } from './components/thankyou/thankyou.component';
 
 
 export const routes: Routes = [
@@ -64,6 +65,11 @@ export const routes: Routes = [
     component: DashboardComponent,
     canActivate: [BootstrapAuthGuard]
   },
+  {
+    path: 'thankyou',
+    component: ThankyouComponent,
+    canActivate: [AnonymousAuthGuard]
+  },
 ];
 
 
@@ -77,7 +83,8 @@ export const routes: Routes = [
     LoginComponent,
     HomepageComponent,
     PanelComponent,
-    QuestionsComponent
+    QuestionsComponent,
+    ThankyouComponent
   ],
   imports: [
     BrowserModule,

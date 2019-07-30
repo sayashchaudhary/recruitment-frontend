@@ -25,6 +25,7 @@ import { Constants } from '../utils/constants';
   providedIn: 'root'
 })
 export class QuestionsMiddleware {
+  private navigate: any;
   constructor(private store: Store<RootState>,
               private httpService: HttpService,
               private router: Router) {
@@ -101,5 +102,6 @@ export class QuestionsMiddleware {
         return this.httpService.post('/answersupdate', res);
       })
     ).subscribe(res => console.log(res));
+    this.navigate.thankyou();
   }
 }

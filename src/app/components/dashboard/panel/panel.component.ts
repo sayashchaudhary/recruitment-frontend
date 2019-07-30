@@ -8,9 +8,7 @@ import { QuestionsMiddleware } from '../../../middlewares/questions';
   styleUrls: ['./panel.component.css']
 })
 export class PanelComponent implements OnInit {
-
   answers: Answer[];
-
   constructor(private questionsMiddleware: QuestionsMiddleware) {
   }
 
@@ -22,5 +20,4 @@ export class PanelComponent implements OnInit {
   finish() {
     this.questionsMiddleware.submitTest();
   }
-
 }
