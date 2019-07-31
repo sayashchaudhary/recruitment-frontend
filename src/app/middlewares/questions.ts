@@ -25,19 +25,14 @@ import { Constants } from '../utils/constants';
   providedIn: 'root'
 })
 export class QuestionsMiddleware {
-  constructor(private s;
-
-  tore: Store<RootState>
-,
-  private httpService: HttpService
-,
-  private router: Router
+  constructor(private store: Store<RootState>,
+              private httpService: HttpService,
+              private router: Router
 ) {
 
 }
 
-fetchQuestions()
-{
+fetchQuestions() {
   let isQuestionsLoading$ = this.store.select(getIsQuestionsLoading);
   let isQuestionsLoaded$ = this.store.select(getIsQuestionsLoaded);
   combineLatest(isQuestionsLoaded$, isQuestionsLoading$).pipe(
@@ -64,26 +59,22 @@ fetchQuestions()
   });
 }
 
-getIsQuestionsLoading()
-{
+getIsQuestionsLoading() {
   return this.store.select(getIsQuestionsLoading);
 }
 
-getQuestions()
-{
+getQuestions() {
   return this.store.select(getQuestions);
 }
 
-getAnswers()
-{
+getAnswers() {
   return this.store.select(getAnswers);
 }
 
 initializeAnswers(questions
 :
 Question[]
-)
-{
+) {
   const answers: Answer[] = [];
   const userId = localStorage.getItem(Constants.USER_ID);
   this.store.select(getIsAnswersInitialized).subscribe(res => {
@@ -103,16 +94,14 @@ Question[]
 updateAnswer(answer
 :
 Answer
-)
-{
+) {
   if (!answer.question) {
     return;
   }
   this.store.dispatch(new UpdateAnswer(answer));
 }
 
-submitTest()
-{
+submitTest() {
   this.getAnswers().pipe(
     take(1),
     switchMap((res: Answer[]) => {
@@ -123,5 +112,5 @@ submitTest()
     console.log(res);
     this.router.navigate(['thankyou']);
   });
-},
+}
 }
