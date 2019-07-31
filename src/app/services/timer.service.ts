@@ -18,13 +18,12 @@ export class TimerService {
     timer(0, 1000).subscribe(
       (_) => {
         this.seconds--;
-        if (this.seconds === 0) {
+        if (this.seconds === -1) {
           this.seconds = 59;
           this.minutes--;
         }
-        if (this.minutes === 0) {
-          this.minutes = 60;
-          this.hours--;
+        if (this.minutes === -1) {
+          this.eventBus.emit(Broadcaster.FINISH_TEST);
         }
         this.emitEvents();
       }

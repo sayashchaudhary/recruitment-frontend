@@ -14,7 +14,7 @@ export class EventBusService {
     this.broadcaster = new Subject<IBroadcaster>();
   }
 
-  emit(key: string, payload: any) {
+  emit(key: string, payload?: any) {
     const event: IBroadcaster = {
       key, payload
     };

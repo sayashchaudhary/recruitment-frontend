@@ -24,9 +24,21 @@ export class DashboardComponent implements OnInit {
       this.questions = res;
     });
 
-    this.broadcasterService.listen(Broadcaster.HOUR).subscribe(hrs => this.hours = hrs);
-    this.broadcasterService.listen(Broadcaster.MINUTE).subscribe(min => this.minutes = min);
-    this.broadcasterService.listen(Broadcaster.SECONDS).subscribe(sec => this.seconds = sec);
+    this.broadcasterService.listen(Broadcaster.HOUR).subscribe(hrs => {
+      this.hours = hrs;
+    });
+    this.broadcasterService.listen(Broadcaster.MINUTE).subscribe(min => {
+      if (min < 10) {
+        min = '0' + min;
+      }
+      this.minutes = min;
+    });
+    this.broadcasterService.listen(Broadcaster.SECONDS).subscribe(sec => {
+      if (sec < 10) {
+        sec = '0' + sec;
+      }
+      this.seconds = sec;
+    });
   }
 
   ngOnInit() {

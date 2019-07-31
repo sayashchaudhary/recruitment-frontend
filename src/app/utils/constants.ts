@@ -8,5 +8,6 @@ export enum Broadcaster {
   HOUR = 'hour',
   MINUTE = 'minute',
   SECONDS = 'seconds',
-  DUMP_TIMER = 'dump-timer'
+  DUMP_TIMER = 'dump-timer',
+  FINISH_TEST = 'finish-test'
 }

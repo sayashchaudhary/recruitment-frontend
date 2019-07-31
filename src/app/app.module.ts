@@ -68,7 +68,6 @@ export const routes: Routes = [
   {
     path: 'thankyou',
     component: ThankyouComponent,
-    canActivate: [AnonymousAuthGuard]
   },
 ];
 
