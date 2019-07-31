@@ -55,6 +55,7 @@ export class QuestionsMiddleware {
       }
     }, (err) => {
       console.log('[Error Questions]', err);
+      this.store.dispatch(new FetchQuestionsFailed());
     });
   }
 

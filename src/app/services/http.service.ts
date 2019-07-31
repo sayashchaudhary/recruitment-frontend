@@ -19,7 +19,7 @@ export class HttpService {
     const url = this.BASE_URL + endPoint;
     const options = {
       params: data,
-      header: this.getHeaders()
+      headers: this.getHeaders()
     };
     return this.http.get(url, options);
   }
