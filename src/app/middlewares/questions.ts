@@ -15,9 +15,8 @@ import { HttpService } from '../services/http.service';
 import { Question } from '../models/question';
 import { FetchQuestions, FetchQuestionsFailed, FetchQuestionsSuccess } from '../actions/questions';
 import { Router } from '@angular/router';
-import { AppBootstraped } from '../actions/app';
+import { AppBootstraped, TestSubmitted } from '../actions/app';
 import { Answer } from '../models/answer';
-import { User } from '../models/user';
 import { InitializeAnswers, UpdateAnswer } from '../actions/answers';
 import { Constants } from '../utils/constants';
 
@@ -110,6 +109,7 @@ submitTest() {
     })
   ).subscribe(res => {
     console.log(res);
+    this.store.dispatch(new TestSubmitted());
     this.router.navigate(['thankyou']);
   });
 }

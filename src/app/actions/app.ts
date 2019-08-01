@@ -8,7 +8,8 @@ export enum AppActions {
   REGISTER_FAILED = '[App] register failed',
   LOGIN_SENT = '[App] login sent',
   LOGIN_SUCCESS = '[App] login success',
-  LOGIN_FAILED = '[App] login failed'
+  LOGIN_FAILED = '[App] login failed',
+  TEST_SUBMITTED = '[App] test submitted'
 }
 
 export class RegisterSent implements Action {
@@ -43,6 +44,10 @@ export class LogInSuccess implements Action {
 
 export class AppBootstraped implements Action {
   readonly type = AppActions.BOOTSTRAP;
+}
+
+export class TestSubmitted implements Action {
+  readonly type = AppActions.TEST_SUBMITTED;
 }
 
 

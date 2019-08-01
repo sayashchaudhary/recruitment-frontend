@@ -1,4 +1,4 @@
-import { _getIsBootstraped, _getIsLoading, _getIsLoggedIn, _getLoggedInUser, appReducer, AppState } from './app';
+import { _getIsBootstraped, _getIsLoading, _getIsLoggedIn, _getIsTestSubmitted, _getLoggedInUser, appReducer, AppState } from './app';
 import { ActionReducerMap, createSelector } from '@ngrx/store';
 import { _getQuestions, _getIsQuestionsLoaded, _getIsQuestionsLoading, questionsReducer, QuestionState } from './question';
 import { _getIsAnswersInitialized, answersAdapter, answersReducer, AnswersState } from './answers';
@@ -73,4 +73,9 @@ export const getAnswers = (state) => getAllAnswers(state);
 export const getIsAnswersInitialized = createSelector(
   getAnswersState,
   _getIsAnswersInitialized
+);
+
+export const getIsTestSubmitted = createSelector(
+  getAppState,
+  _getIsTestSubmitted
 );

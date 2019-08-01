@@ -7,6 +7,7 @@ export interface AppState {
   isLoggedIn: boolean;
   loading: boolean;
   isBootstraped: boolean;
+  isTestSubmitted: boolean;
 }
 
 export const initialState: AppState = {
@@ -14,6 +15,7 @@ export const initialState: AppState = {
   isLoggedIn: false,
   loading: false,
   isBootstraped: null,
+  isTestSubmitted: false,
 };
 
 export function appReducer(state: AppState = initialState, action: Action) {
@@ -60,6 +62,11 @@ export function appReducer(state: AppState = initialState, action: Action) {
         ...state,
         isBootstraped: true,
       };
+    case AppActions.TEST_SUBMITTED:
+      return {
+        ...state,
+        isTestSubmitted: true
+      };
     default: {
       return state;
     }
@@ -70,4 +77,5 @@ export const _getLoggedInUser = (state: AppState) => state.loggedInUser;
 export const _getIsLoading = (state: AppState) => state.loading;
 export const _getIsLoggedIn = (state: AppState) => state.isLoggedIn;
 export const _getIsBootstraped = (state: AppState) => state.isBootstraped;
+export const _getIsTestSubmitted = (state: AppState) => state.isTestSubmitted;
 

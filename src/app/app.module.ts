@@ -32,6 +32,7 @@ import { PanelComponent } from './components/dashboard/panel/panel.component';
 import { QuestionsComponent } from './components/dashboard/questions/questions.component';
 import { BootstrapAuthGuard } from './guards/bootstrap-auth.guard';
 import { ThankyouComponent } from './components/thankyou/thankyou.component';
+import { ThankyouGuard } from './guards/thank-you.guard';
 
 
 export const routes: Routes = [
@@ -58,12 +59,12 @@ export const routes: Routes = [
   {
     path: 'instructions',
     component: InstructionComponent,
-    canActivate: [BootstrapAuthGuard]
+    canActivate: [ThankyouGuard, BootstrapAuthGuard]
   },
   {
     path: 'dashboard',
     component: DashboardComponent,
-    canActivate: [BootstrapAuthGuard]
+    canActivate: [ThankyouGuard, BootstrapAuthGuard]
   },
   {
     path: 'thankyou',
