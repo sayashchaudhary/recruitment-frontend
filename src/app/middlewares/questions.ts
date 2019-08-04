@@ -110,6 +110,8 @@ submitTest() {
   ).subscribe(res => {
     console.log(res);
     this.store.dispatch(new TestSubmitted());
+    localStorage.removeItem(Constants.USER_ID);
+    localStorage.removeItem(Constants.AUTH_TOKEN);
     this.router.navigate(['thankyou']);
   });
 }
