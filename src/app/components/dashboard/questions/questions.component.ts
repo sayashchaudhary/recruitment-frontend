@@ -37,6 +37,7 @@ export class QuestionsComponent implements OnInit {
           break;
       }
     });
+    this.questionsMiddleware.initializeAnswers([...this.cLanguage, ...this.aptitude, ...this.htmlCss, ...this.java, ...this.algorithm]);
   }
 
 

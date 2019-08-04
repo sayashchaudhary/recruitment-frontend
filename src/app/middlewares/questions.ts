@@ -47,7 +47,6 @@ export class QuestionsMiddleware {
         this.router.navigate(['instructions']);
         this.store.dispatch(new AppBootstraped());
         this.store.dispatch(new FetchQuestionsSuccess(res));
-        this.initializeAnswers(res);
       } else {
         this.store.dispatch(new FetchQuestionsFailed());
       }
