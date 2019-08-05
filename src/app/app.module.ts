@@ -11,7 +11,7 @@ import { environment } from '../environments/environment';
 import { CommonModule } from '@angular/common';
 import { ReactiveFormsModule } from '@angular/forms';
 import {
-  MatButtonModule,
+  MatButtonModule, MatDialogModule,
   MatFormFieldModule,
   MatInputModule,
   MatSelectModule,
@@ -33,6 +33,7 @@ import { QuestionsComponent } from './components/dashboard/questions/questions.c
 import { BootstrapAuthGuard } from './guards/bootstrap-auth.guard';
 import { ThankyouComponent } from './components/thankyou/thankyou.component';
 import { ThankyouGuard } from './guards/thank-you.guard';
+import { ConfirmationPopupComponent } from './components/dashboard/panel/confirmation-popup/confirmation-popup.component';
 
 
 export const routes: Routes = [
@@ -84,7 +85,8 @@ export const routes: Routes = [
     HomepageComponent,
     PanelComponent,
     QuestionsComponent,
-    ThankyouComponent
+    ThankyouComponent,
+    ConfirmationPopupComponent
   ],
   imports: [
     BrowserModule,
@@ -100,12 +102,14 @@ export const routes: Routes = [
     MatButtonModule,
     MatSnackBarModule,
     MatToolbarModule,
+    MatDialogModule,
     StoreModule.forRoot(appRootReducer),
     !environment.production ? StoreDevtoolsModule.instrument({ maxAge: 50 }) : [],
     NgxLoadingModule.forRoot({})
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  entryComponents:[ConfirmationPopupComponent]
 })
 export class AppModule {
 }

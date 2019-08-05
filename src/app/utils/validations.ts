@@ -22,7 +22,7 @@ export class ValidationUtils {
 
   public static validatePassword(control: AbstractControl): { [key: string]: boolean } | null {
     const password = control.value;
-    if(!password || password.toString().length !==7) {
+    if (!password || password.toString().length <= 7) {
       return { password: true };
     } else {
       return null;

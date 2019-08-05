@@ -45,12 +45,12 @@ export class AppMiddleware {
         this.router.navigate(['']);
       } else {
         this.store.dispatch(new RegisterFailed());
-        this.snackbar.open(this.errorMessage, null, {duration: 5000});
+        this.snackbar.open(this.errorMessage, null, { duration: 5000 });
       }
     }, (e) => {
       console.log(e);
       this.store.dispatch(new RegisterFailed());
-      this.snackbar.open(this.errorMessage, null, {duration: 5000});
+      this.snackbar.open(e.error.error || this.errorMessage, null, { duration: 5000 });
     });
   }
 
@@ -74,12 +74,12 @@ export class AppMiddleware {
         this.router.navigate(['']);
       } else {
         this.store.dispatch(new LogInFailed());
-        this.snackbar.open(this.errorMessage, null, {duration: 5000});
+        this.snackbar.open(this.errorMessage, null, { duration: 5000 });
       }
     }, (e) => {
       console.log(e);
       this.store.dispatch(new LogInFailed());
-      this.snackbar.open(this.errorMessage, null, {duration: 5000});
+      this.snackbar.open(e.error.error || this.errorMessage, null, { duration: 5000 });
     });
   }
 

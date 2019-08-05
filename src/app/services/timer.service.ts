@@ -22,6 +22,9 @@ export class TimerService {
           this.seconds = 59;
           this.minutes--;
         }
+        if (this.minutes === 29  && this.seconds === 59) {
+          this.eventBus.emit(Broadcaster.ENABLE_SUBMIT);
+        }
         if (this.minutes === -1) {
           this.eventBus.emit(Broadcaster.FINISH_TEST);
         }

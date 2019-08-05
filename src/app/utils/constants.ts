@@ -9,5 +9,6 @@ export enum Broadcaster {
   MINUTE = 'minute',
   SECONDS = 'seconds',
   DUMP_TIMER = 'dump-timer',
-  FINISH_TEST = 'finish-test'
+  FINISH_TEST = 'finish-test',
+  ENABLE_SUBMIT = 'enable-submit'
 }
