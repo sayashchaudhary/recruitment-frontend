@@ -9,7 +9,7 @@ import { MatDialogRef } from '@angular/material';
       <div><p>Are you sure you want to submit the test?</p></div>
       <div style="float: right">
         <button mat-button (click)="clicked(false)">Cancel</button>
-        <button mat-button (click)="clicked(true)">Submit</button>
+        <button mat-button color="primary" (click)="clicked(true)">Submit</button>
       </div>
     </div>
   `
