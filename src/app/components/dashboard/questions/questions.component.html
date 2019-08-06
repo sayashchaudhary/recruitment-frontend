@@ -27,7 +27,7 @@
   <div>
     <h4 id="aptitude">Aptitude</h4>
     <div class="single-question" *ngFor="let question of aptitude; let i = index">
-      <pre><span class="q-number">Q. {{i+6}}-</span> {{question.question}}</pre>
+      <pre><span class="q-number">Q. {{i+11}}-</span> {{question.question}}</pre>
       <div class="radio-container">
         <input (change)="radioChanged($event)" type="radio" [value]="0" [name]="question._id">
         {{question.options[0]}}
@@ -53,7 +53,7 @@
   <div>
     <h4 id="html-css">HTML/CSS</h4>
     <div class="single-question" *ngFor="let question of htmlCss; let i = index">
-      <pre><span class="q-number">Q. {{i+11}}-</span> {{question.question}}</pre>
+      <pre><span class="q-number">Q. {{i+21}}-</span> {{question.question}}</pre>
       <div class="radio-container">
         <input (change)="radioChanged($event)" type="radio" [value]="0" [name]="question._id">
         {{question.options[0]}}
@@ -79,7 +79,7 @@
   <div>
     <h4 id="java">Java</h4>
     <div class="single-question" *ngFor="let question of java; let i = index">
-      <pre><span class="q-number">Q. {{i+16}}-</span> {{question.question}}</pre>
+      <pre><span class="q-number">Q. {{i+26}}-</span> {{question.question}}</pre>
       <div class="radio-container">
         <input (change)="radioChanged($event)" type="radio" [value]="0" [name]="question._id">
         {{question.options[0]}}
@@ -104,8 +104,8 @@
 
   <div>
     <h4 id="algorithm">Algorithm</h4>
-    <div class="single-question" *ngFor="let question of algorithm">
-      <pre><span class="q-number">Q. {{i+21}}-</span> {{question.question}}</pre>
+    <div class="single-question" *ngFor="let question of algorithm; let i = index">
+      <pre><span class="q-number">Q. {{i+31}}-</span> {{question.question}}</pre>
       <div class="divider"></div>
     </div>
   </div>
