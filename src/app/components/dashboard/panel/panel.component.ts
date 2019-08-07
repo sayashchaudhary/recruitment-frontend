@@ -56,4 +56,11 @@ export class PanelComponent implements OnInit {
     }
 
   }
+
+  navigateToQuestion(id) {
+    if (!id) {
+      return;
+    }
+    document.getElementById(id).scrollIntoView();
+  }
 }

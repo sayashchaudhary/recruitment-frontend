@@ -3,7 +3,7 @@
   <div class="question-number">
     <div class="bubble-container">
       <div class="bubble" *ngFor="let answer of answers; let i = index">
-        <button [ngClass]="{'answered':answer.answer}">{{i+1}}</button>
+        <button (click)="navigateToQuestion(answer.question)" [ngClass]="{'answered':answer.answer}">{{i+1}}</button>
       </div>
     </div>
   </div>
