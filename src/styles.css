@@ -6,3 +6,8 @@
 mat-form-field {
   display: block !important;
 }
+
+.mat-toolbar {
+  height: 50px !important;
+  font-size: 18px;
+}

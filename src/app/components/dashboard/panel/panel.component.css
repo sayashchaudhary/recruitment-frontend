@@ -28,7 +28,7 @@
 }
 
 .test-grid__nav-btn:hover {
-  background-color: #4682b4;
+  background-color: #192A56;
   color: #ffffff;
 }
 
@@ -57,6 +57,6 @@ button {
 }
 
 .answered {
-  background: green;
+  background: #2ecc72;
   color: white;
 }

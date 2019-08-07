@@ -34,10 +34,7 @@ export class AppMiddleware {
       filter(status => !status),
       switchMap(() => {
         this.store.dispatch(new RegisterSent());
-        return this.httpService.post(`/users`, {
-          ...user,
-          master: 'teamconatus'
-        });
+        return this.httpService.post(`/users`, user);
       }),
       catchError(err => throwError(err)));
     status$.subscribe((res: { user: User, token: string }) => {
