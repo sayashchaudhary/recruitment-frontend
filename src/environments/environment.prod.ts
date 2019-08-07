@@ -1,4 +1,6 @@
 export const environment = {
   production: true,
-  baseUrl : 'https://api.quest.sandishya19akgec.com'
+  baseUrl : 'https://api.quest.sandishya19akgec.com',
+  adminUname: 'myteamconatus',
+  adminPassword: '##conatusteammy##'
 };

@@ -34,6 +34,8 @@ import { BootstrapAuthGuard } from './guards/bootstrap-auth.guard';
 import { ThankyouComponent } from './components/thankyou/thankyou.component';
 import { ThankyouGuard } from './guards/thank-you.guard';
 import { ConfirmationPopupComponent } from './components/dashboard/panel/confirmation-popup/confirmation-popup.component';
+import { AdminComponent } from './components/admin/admin.component';
+import { AdminGuard } from './guards/admin.guard';
 
 
 export const routes: Routes = [
@@ -43,29 +45,33 @@ export const routes: Routes = [
     canActivate: [BootstrapGuard]
   },
   {
+    path: 'admin',
+    component: AdminComponent
+  },
+  {
     path: 'home',
     component: HomepageComponent,
-    canActivate: [AnonymousAuthGuard]
+    canActivate: [AnonymousAuthGuard, AdminGuard]
   },
   {
     path: 'register',
     component: RegisterComponent,
-    canActivate: [AnonymousAuthGuard]
+    canActivate: [AnonymousAuthGuard, AdminGuard]
   },
   {
     path: 'login',
     component: LoginComponent,
-    canActivate: [AnonymousAuthGuard]
+    canActivate: [AnonymousAuthGuard, AdminGuard]
   },
   {
     path: 'instructions',
     component: InstructionComponent,
-    canActivate: [ThankyouGuard, BootstrapAuthGuard]
+    canActivate: [ThankyouGuard, BootstrapAuthGuard, AdminGuard]
   },
   {
     path: 'dashboard',
     component: DashboardComponent,
-    canActivate: [ThankyouGuard, BootstrapAuthGuard]
+    canActivate: [ThankyouGuard, BootstrapAuthGuard, AdminGuard]
   },
   {
     path: 'thankyou',
@@ -86,7 +92,8 @@ export const routes: Routes = [
     PanelComponent,
     QuestionsComponent,
     ThankyouComponent,
-    ConfirmationPopupComponent
+    ConfirmationPopupComponent,
+    AdminComponent
   ],
   imports: [
     BrowserModule,
@@ -109,7 +116,7 @@ export const routes: Routes = [
   ],
   providers: [],
   bootstrap: [AppComponent],
-  entryComponents:[ConfirmationPopupComponent]
+  entryComponents: [ConfirmationPopupComponent]
 })
 export class AppModule {
 }
