@@ -25,6 +25,7 @@ export class RegisterComponent implements OnInit {
       phone: new FormControl(null, [Validators.required, ValidationUtils.validatePhoneNo.bind(this)]),
       password: new FormControl(null, [Validators.required, ValidationUtils.validatePassword.bind(this)]),
       branch: new FormControl(null, [Validators.required]),
+      recaptcha: new FormControl(null, [Validators.required])
     });
   }
 
@@ -33,6 +34,23 @@ export class RegisterComponent implements OnInit {
   }
 
   submit() {
+    // console.log(this.form.value);
     this.appMiddleware.register(this.form.value);
+  }
+
+  handleReset() {
+    console.log('Reset');
+  }
+
+  handleExpire() {
+    console.log('Expire');
+  }
+
+  handleLoad() {
+    console.log('Load');
+  }
+
+  handleSuccess(event) {
+    console.log('Success', event);
   }
 }

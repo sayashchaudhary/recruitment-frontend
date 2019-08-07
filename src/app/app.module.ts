@@ -36,6 +36,7 @@ import { ThankyouGuard } from './guards/thank-you.guard';
 import { ConfirmationPopupComponent } from './components/dashboard/panel/confirmation-popup/confirmation-popup.component';
 import { AdminComponent } from './components/admin/admin.component';
 import { AdminGuard } from './guards/admin.guard';
+import { NgxCaptchaModule } from 'ngx-captcha';
 
 
 export const routes: Routes = [
@@ -112,7 +113,8 @@ export const routes: Routes = [
     MatDialogModule,
     StoreModule.forRoot(appRootReducer),
     !environment.production ? StoreDevtoolsModule.instrument({ maxAge: 50 }) : [],
-    NgxLoadingModule.forRoot({})
+    NgxLoadingModule.forRoot({}),
+    NgxCaptchaModule
   ],
   providers: [],
   bootstrap: [AppComponent],
