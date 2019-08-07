@@ -9,10 +9,6 @@ nav{
 }
 
 .section {
-  color: white;
-  background: #6A89CC;
-  border: 1px solid white;
-  border-radius: 3px;
   font-size: 16px;
   cursor: pointer;
 }
