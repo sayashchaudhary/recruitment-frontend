@@ -1,4 +1,5 @@
 import { AbstractControl } from '@angular/forms';
+import { startWith } from 'rxjs/operators';
 
 export class ValidationUtils {
 
@@ -13,7 +14,7 @@ export class ValidationUtils {
 
   public static validateField(control: AbstractControl): { [key: string]: boolean } | null {
     const fieldValue = control.value;
-    if (!fieldValue || fieldValue.toString().length !== 10) {
+    if (!fieldValue || fieldValue.startsWith('18027', '19027')) {
       return { fieldNumber: true };
     } else {
       return null;
