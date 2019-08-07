@@ -22,7 +22,7 @@ export class RegisterComponent implements OnInit {
       email: new FormControl(null, [Validators.required, Validators.email]),
       student_number: new FormControl(null, [Validators.required, ValidationUtils.validateStudentNo.bind(this)]),
       roll_number: new FormControl(null, [Validators.required, ValidationUtils.validateField.bind(this)]),
-      phone: new FormControl(null, [Validators.required, ValidationUtils.validateField.bind(this)]),
+      phone: new FormControl(null, [Validators.required, ValidationUtils.validatePhoneNo.bind(this)]),
       password: new FormControl(null, [Validators.required, ValidationUtils.validatePassword.bind(this)]),
       branch: new FormControl(null, [Validators.required]),
     });

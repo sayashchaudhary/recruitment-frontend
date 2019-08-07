@@ -10,10 +10,20 @@ export class ValidationUtils {
       return null;
     }
   }
+  public static validatePhoneNo(control: AbstractControl): { [key: string]: boolean } | null {
+    const studentNo = control.value;
+    if (!studentNo || studentNo.toString().length !== 10) {
+      return { mobileNumber: true };
+    } else {
+      return null;
+    }
+  }
 
   public static validateField(control: AbstractControl): { [key: string]: boolean } | null {
     const fieldValue = control.value;
-    if (!fieldValue || fieldValue.toString().length !== 10) {
+    if (!fieldValue ||
+      fieldValue.toString().length !== 10 ||
+      !(fieldValue.toString().startsWith('18027') || fieldValue.toString().startsWith('19027'))) {
       return { fieldNumber: true };
     } else {
       return null;
