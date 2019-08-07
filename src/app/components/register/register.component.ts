@@ -25,6 +25,7 @@ export class RegisterComponent implements OnInit {
       phone: new FormControl(null, [Validators.required, ValidationUtils.validateField.bind(this)]),
       password: new FormControl(null, [Validators.required, ValidationUtils.validatePassword.bind(this)]),
       branch: new FormControl(null, [Validators.required]),
+      master_password: new FormControl(null, [Validators.required]),
     });
   }
 
