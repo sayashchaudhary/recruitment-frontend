@@ -6,7 +6,7 @@ export class ValidationUtils {
   public static validateStudentNo(control: AbstractControl): { [key: string]: boolean } | null {
     const studentNo = control.value;
     if (!studentNo || studentNo.toString().length !== 7) {
-      return {studentNumber: true};
+      return { studentNumber: true };
     } else {
       return null;
     }
@@ -15,7 +15,7 @@ export class ValidationUtils {
   public static validatePhoneNo(control: AbstractControl): { [key: string]: boolean } | null {
     const studentNo = control.value;
     if (!studentNo || studentNo.toString().length !== 10) {
-      return {mobileNumber: true};
+      return { mobileNumber: true };
     } else {
       return null;
     }
@@ -37,7 +37,7 @@ export class ValidationUtils {
   public static validatePassword(control: AbstractControl): { [key: string]: boolean } | null {
     const password = control.value;
     if (!password || password.toString().length <= 7) {
-      return {password: true};
+      return { password: true };
     } else {
       return null;
     }
