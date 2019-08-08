@@ -22,7 +22,7 @@ export class PanelComponent implements OnInit {
               private matDialog: MatDialog) {
 
     this.eventBusService.listen(Broadcaster.FINISH_TEST).subscribe((_) => {
-      this.finish();
+      this.questionsMiddleware.submitTest();
     });
     this.eventBusService.listen(Broadcaster.ENABLE_SUBMIT).subscribe((_) => {
       this.isSubmitEnabled = true;
