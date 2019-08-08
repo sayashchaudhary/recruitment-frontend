@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  baseUrl: 'https://conatus-recruitement.herokuapp.com',
+  baseUrl: 'http://api.quest.sandishya19akgec.com',
   adminUname: 'myteamconatus',
   adminPassword: '##conatusteammy##'
 };
