@@ -22,29 +22,29 @@ import { appRootReducer } from './reducers';
 import { RegisterComponent } from './components/register/register.component';
 import { InstructionComponent } from './components/instruction/instruction.component';
 import { BootstrapComponent } from './components/bootstrap/bootstrap.component';
-import { BootstrapGuard } from './guards/bootstrap.guard';
+// import { BootstrapGuard } from './guards/bootstrap.guard';
 import { NgxLoadingModule } from 'ngx-loading';
-import { AnonymousAuthGuard } from './guards/anonymous-auth.guard';
+// import { AnonymousAuthGuard } from './guards/anonymous-auth.guard';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { LoginComponent } from './components/login/login.component';
 import { HomepageComponent } from './components/homepage/homepage.component';
 import { PanelComponent } from './components/dashboard/panel/panel.component';
 import { QuestionsComponent } from './components/dashboard/questions/questions.component';
-import { BootstrapAuthGuard } from './guards/bootstrap-auth.guard';
+// import { BootstrapAuthGuard } from './guards/bootstrap-auth.guard';
 import { ThankyouComponent } from './components/thankyou/thankyou.component';
-import { ThankyouGuard } from './guards/thank-you.guard';
+// import { ThankyouGuard } from './guards/thank-you.guard';
 import { ConfirmationPopupComponent } from './components/dashboard/panel/confirmation-popup/confirmation-popup.component';
 import { AdminComponent } from './components/admin/admin.component';
-import { AdminGuard } from './guards/admin.guard';
+// import { AdminGuard } from './guards/admin.guard';
 import { NgxCaptchaModule } from 'ngx-captcha';
 
 
 export const routes: Routes = [
-  {
-    path: '',
-    component: BootstrapComponent,
-    canActivate: [BootstrapGuard]
-  },
+  // {
+  //   path: '',
+  //   component: BootstrapComponent,
+  //   canActivate: [BootstrapGuard]
+  // },
   {
     path: 'admin',
     component: AdminComponent
@@ -52,27 +52,27 @@ export const routes: Routes = [
   {
     path: 'home',
     component: HomepageComponent,
-    canActivate: [AnonymousAuthGuard, AdminGuard]
+    // canActivate: [AnonymousAuthGuard, AdminGuard]
   },
   {
     path: 'register',
     component: RegisterComponent,
-    canActivate: [AnonymousAuthGuard, AdminGuard]
+    // canActivate: [AnonymousAuthGuard, AdminGuard]
   },
   {
     path: 'login',
     component: LoginComponent,
-    canActivate: [AnonymousAuthGuard, AdminGuard]
+    // canActivate: [AnonymousAuthGuard, AdminGuard]
   },
   {
     path: 'instructions',
     component: InstructionComponent,
-    canActivate: [ThankyouGuard, BootstrapAuthGuard, AdminGuard]
+    // canActivate: [ThankyouGuard, BootstrapAuthGuard, AdminGuard]
   },
   {
     path: 'dashboard',
     component: DashboardComponent,
-    canActivate: [ThankyouGuard, BootstrapAuthGuard, AdminGuard]
+    // canActivate: [ThankyouGuard, BootstrapAuthGuard, AdminGuard]
   },
   {
     path: 'thankyou',
