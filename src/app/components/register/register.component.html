@@ -35,16 +35,16 @@
           <input type="password" matInput placeholder="Password" formControlName="password">
         </mat-form-field>
       </div>
-      <div style="margin: 20px; display: flex; justify-content: center">
-        <ngx-recaptcha2 style="text-align: center" #captchaElem
-                        [siteKey]="'6Le36LEUAAAAAA_itvYU03ORY9mEYmoaeKEksxCH'"
-                        (reset)="handleReset()"
-                        (expire)="handleExpire()"
-                        (load)="handleLoad()"
-                        (success)="handleSuccess($event)"
-                        formControlName="recaptcha">
-        </ngx-recaptcha2>
-      </div>
+<!--      <div style="margin: 20px; display: flex; justify-content: center">-->
+<!--        <ngx-recaptcha2 style="text-align: center" #captchaElem-->
+<!--                        [siteKey]="'6Le36LEUAAAAAA_itvYU03ORY9mEYmoaeKEksxCH'"-->
+<!--                        (reset)="handleReset()"-->
+<!--                        (expire)="handleExpire()"-->
+<!--                        (load)="handleLoad()"-->
+<!--                        (success)="handleSuccess($event)"-->
+<!--                        formControlName="recaptcha">-->
+<!--        </ngx-recaptcha2>-->
+<!--      </div>-->
 
       <div class="submit-button">
         <button mat-raised-button color="primary" type="submit">Submit</button>
